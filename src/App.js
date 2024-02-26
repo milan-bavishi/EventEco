@@ -28,23 +28,18 @@ function App() {
               <ul>
                 <li>
                   <a href="#">Home</a>
-                  <div></div>
                   </li>
                 <li>
                   <a href="#">Why US</a>
-                  <div></div>
                   </li>
                 <li>
                   <a href="#">Our Team</a>
-                  <div></div>
                   </li>
                 <li>
                   <a href="#">Review</a>
-                  <div></div>
                   </li>
                 <li>
                   <a href="#">Contact Us</a>
-                  <div></div>
                   </li>
               </ul>
             </div>
@@ -68,17 +63,32 @@ function App() {
             </div>
             
             <div className="content">
-              <h1></h1>
-              <p></p>
+              <div>
+              <h1>Everything An
+Event Needs</h1>
+              <p>Watch your visions of the perfect event come to life with
+EvenTor. From meticulous planning to foolproof execution –
+we will ensure your event gets everything it needs with top
+priority.</p>
+              </div>
             </div>
             <img src={Ellipse3} id='ellipse3' loading='lazy'/>
             <img src={Ellipse1} id='ellipse1' loading='lazy' />
             <img src={Ellipse2} id='ellipse2' loading='lazy'/>
+            <img src={image} id='image' />
             <img src={image2} id='image2'/>
             <img src={image3} id='image3'/>
-            <img src={hero} id='hero'/>
+            <img src={hero} id='hero'/> 
             <img src={ yellowVector} id='yellowVector' />
-            <img src="" alt="" />
+            <img src={Vector} id='vector' />
+          </section>
+
+
+          {/*Why us Card*/}
+          <section className=''>
+              <div className='box'>
+                
+              </div>
           </section>
         </main>
 
