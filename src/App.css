@@ -1,38 +1,204 @@
-.App {
-  text-align: center;
+/* Universal */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Body */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.wrapper {
   min-height: 100vh;
+  width: 100%;
+}
+
+/* Header */
+
+header {
+  width: 100%;
+}
+
+/* Nav */
+
+nav {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 1262px;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 9999px;
+  border: 2px solid rgba(11, 66, 112, 0);
+  background: rgba(235, 236, 240, 0.5);
+  box-shadow: -5px -5px 15px 0px #fff, 7px 7px 23.5px 0px #d1d9e6;
+  backdrop-filter: blur(20px);
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, green, gold);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+#eventechoLogo{
+  position: relative;
+  left: 15px;
+  height: 40px;
+  width: 100px;
+}
+nav .event {
+  width: 10%;
+}
+
+nav .components {
+  width: 45%;
+}
+
+nav .components ul {
+  display: flex;
+  gap: 32px;
+}
+
+nav .components ul li {
+  position: relative;
+  list-style-type: none;
+  transition: all 200ms linear;
+  cursor: pointer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+nav .components ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+nav .components ul li div {
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    border: 1px solid black;
+    display: none;
+    transition: all 200ms linear;
+}
+
+nav .button button {
+  padding: 14px 25px 14px 27px;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: #0A142F;
+  transition: all 200ms linear;
+}
+
+/* Hover */
+
+nav .components ul li:hover div {
+    display: block;
+}
+
+nav .components ul li:hover {
+    transform: scale(1.25);
+    font-weight: 700;
+    margin: 0 6px;
+}
+
+nav .button button:hover {
+    transform: scale(1.07);
+    font-size: 23px;
+    font-weight: 900;
+}
+
+/* Main */
+
+/* Hero Section */
+
+.hero {
+  height: 1404px;
+  width: 1444px;
+  position: relative;
+  margin-top: 29px;
+}
+
+.hero .desc {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 30px;
+  position: absolute;
+  top: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.hero .desc h1 {
+  color: var(--main-to, #0a142f);
+  text-align: center;
+  font-family: Rubik;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 80px; /* 100% */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero .desc h2 {
+  color: var(--main-to, #0a142f);
+  text-align: center;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 80px; /* 133.333% */
 }
+
+.hero .desc button {
+  height: 56px;
+  padding: 14px 25px 14px 27px;
+  border-radius: 9999px;
+  color: #fff;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: #0A142F;
+}
+
+/* Image */
+
+#ellipse3 {
+    position: absolute;
+    top: 0px;
+    left: 1206px;
+}
+
+#ellipse1{
+  position: absolute;
+  top: 190px;
+  left: 308px;
+}
+
+#ellipse2{
+  position: absolute;
+  top: 284px;
+  left: 236px;
+}
+
+#image2{
+  position: absolute;
+  top: 230px;
+  left: 430px;
+}
+
+#image3{
+  position: absolute;
+  
+}
+
+  /* #hero{
+    position: absolute;
+    top: 230px;
+    left: 96px;
+  } */
