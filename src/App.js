@@ -172,7 +172,7 @@ function App() {
                 <button>submit</button>
               </div>
             </div>
-            <h1>vatsal</h1>
+           
           </section>
 
 
@@ -180,7 +180,7 @@ function App() {
 
 
 
-          
+
         </main>
       </div>
     </>
