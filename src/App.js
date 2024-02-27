@@ -115,6 +115,9 @@ function App() {
               <div className='cards'>
                 <img src={Vector1}  id='vector1'/>
                 <img src={Vector2}  id='vector2'/>
+                
+                
+                
                 {/* <div className="card1">
                   Innovative Technology 
                 </div>
@@ -137,6 +140,8 @@ function App() {
                 <div className="card7">
                 Key Features
                 </div> */}
+
+
               </div>
           </section>
 
