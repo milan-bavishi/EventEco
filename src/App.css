@@ -101,10 +101,15 @@ nav .button button:hover {
 
 /* Main */
 
+main {
+  min-height: 100vh;
+}
+
 /* Hero Section */
 
 .hero {
   width: 100%;
+  height: 1404px;
   position: relative;
   margin-top: 29px;
 }
@@ -259,4 +264,16 @@ main .hero .desc div button:hover {
   transform: scale(1.15);
 }
 
+/* Why Us */
 
+.whyUs {
+  position: relative;
+}
+
+#vector1{
+    
+}
+
+#vector2{
+  
+}
