@@ -31,6 +31,7 @@ import Vector1 from "./icon/Vector-1.svg";
 import Vector2 from "./icon/Vector-2.svg";
 import whyusEle1 from "./icon/whyus-ele-1.svg";
 import whyusEle2 from "./icon/whyus-ele-2.svg";
+import graphic from "./icon/graphic.svg";
 
 function App() {
   return (
@@ -136,15 +137,49 @@ function App() {
             </div>
           </section>
 
-          <section>
-            <div className="mainreview">
-              <div className="heading">
-                <div>Hear From Our Happy Clients</div>
-              </div>
+          {/* Connect US */}
 
-              <div className="review"></div>
+          <section className="connectUs">
+            <div className="title">
+              <h1>Connect Us</h1>
+              <h4>We are here for you! How can we help?</h4>
+            </div>
+            <div className="details">
+              <div className="location">
+                <div>
+                  <img src={graphic} alt="" />
+                </div>
+                <div className="loc">
+                  <div className="flex">
+                    <img src={location} alt="" />
+                    <p>Sahjanad Hostel</p>
+                  </div>
+                  <div className="flex">
+                    <img src={number} alt="" />
+                    <p>+91 99999xxxxx</p>
+                  </div>
+                  <div className="flex">
+                    <img src={connectMail} alt="" />
+                    <p>noreply.eventeco@yahoo.com</p>
+                  </div>
+                </div>
+              </div>
+              <div className="form">
+                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Email" />
+                <input type="text" placeholder="Subject"/>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Go ahead, We are listening..."></textarea>
+                <button>submit</button>
+              </div>
             </div>
           </section>
+
+
+
+
+
+
+          
         </main>
       </div>
     </>

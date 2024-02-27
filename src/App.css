@@ -1,5 +1,6 @@
 /* Universal */
-
+/* import "@fontsource/poppins"; // Defaults to weight 400
+import "@fontsource/poppins/400.css"; // Specify weight  */
 * {
   margin: 0;
   padding: 0;
@@ -73,6 +74,7 @@ nav .components ul li {
 nav .components ul li a {
   text-decoration: none;
   color: rgb(0, 0, 0);
+  font-family: Poppins;
 }
 
 nav .button button {
@@ -302,7 +304,7 @@ main {
 .whyUs .cards .cardMain {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 25px;
 }
 
 .whyUs .cards .cardMain .first,
@@ -310,13 +312,12 @@ main {
 .whyUs .cards .cardMain .third {
   display: flex;
   flex-direction: column;
-  gap: 31px;
+  gap: 27px;
 }
 
 .whyUs .cards .card {
   z-index: 1;
   padding: 48px 24px;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -331,6 +332,13 @@ main {
   font-weight: 500;
   line-height: 143.203%; /* 42.961px */
   box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.08);
+  transition: all 200ms linear;
+}
+
+/* Hover */
+
+.whyUs .cards .card:hover {
+  transform: scale(1.1);
 }
 
 /* Images */
@@ -353,10 +361,129 @@ main {
   position: absolute;
 }
 
-/* Transforms */
+/* Connect Us */
 
-#vector1:active {
-  transform: rotateX("137deg"), rotateX("137deg"), rotateX("137deg");
+.connectUs {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
 }
 
-/* Review Section CSS*/
+.connectUs .title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+
+.connectUs .title h1 {
+  color: #1c1c65;
+  font-family: Inter;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 105%; /* 52.5px */
+  letter-spacing: 1px;
+  top: 19px;
+  margin-left: 50px;
+}
+
+.connectUs .title h4 {
+  color: rgba(15, 27, 135, 0.84);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  top: 71px;
+  margin-left: 10px;
+}
+
+.connectUs .details {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.connectUs .details .location {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.connectUs .details .location .loc {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.connectUs .details .location .loc .flex {
+  display: flex;
+  gap: 15px;
+  height: 30px;
+  align-items: center;
+}
+.connectUs .details .location .loc .flex p {
+  color: #6667a3;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.12px;
+}
+.connectUs .details .form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.connectUs .details .form input {
+  display: flex;
+  padding: 15px 473px 15px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid #0b0d70;
+  background: rgba(11, 13, 112, 0.05);
+  transition: all 200ms linear;
+}
+.connectUs .details .form textarea {
+  display: flex;
+  padding: 15px 289px 148px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 218px;
+  border-radius: 10px;
+  border: 1px solid #0b0d70;
+  background: rgba(11, 13, 112, 0.05);
+  transition: all 200ms linear;
+}
+
+.connectUs .details .form button {
+  display: flex;
+  padding: 9px 67px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #0b0d70;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  transition: all 200ms linear;
+}
+
+/* Hover */
+
+.connectUs .details .form input:hover, .connectUs .details .form textarea:hover, .connectUs .details .form button:hover {
+  transform: scale(1.05);
+}
