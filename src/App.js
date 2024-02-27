@@ -86,9 +86,64 @@ priority.</p>
 
           {/*Why us Card*/}
           <section className=''>
-              <div className='box'>
-                
+              <div className='whyUsbox'>
+                {/* Why us */}
               </div>
+          </section>
+
+
+
+          {/*Reviwe Section*/}
+          <section>
+            <div>
+
+            </div>
+          </section>
+
+
+
+
+
+          {/*Team Section*/}
+          <section>
+            <div>
+
+            </div>
+          </section>
+
+
+
+
+
+
+          {/*Connect Us Section*/}
+          <section>
+            <div>
+
+            </div>
+          </section>
+
+
+
+
+
+
+          {/*Subscribe  Model*/}
+          <section>
+            <div>
+
+            </div>
+          </section>
+
+
+
+
+
+          {/*Footer*/}
+          <section>
+            <div>
+              
+            </div>
           </section>
         </main>
 

@@ -258,3 +258,8 @@ nav .button button:hover {
 main .hero .desc div button:hover {
   transform: scale(1.15);
 }
+
+
+section .whyUsbox{
+  padding: 49px 258px 0px 258px;
+}
