@@ -35,7 +35,7 @@ nav {
   box-shadow: -5px -5px 15px 0px #fff, 7px 7px 23.5px 0px #d1d9e6;
   backdrop-filter: blur(20px);
   background-image: linear-gradient(white, white),
-    linear-gradient(to right, #0B427000, #060E3F);
+    linear-gradient(to right, #0b427000, #060e3f);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -198,7 +198,6 @@ main {
   font-style: normal;
   font-weight: 400;
   line-height: 38px; /* 190% */
-
 }
 
 /* Image */
@@ -260,13 +259,104 @@ main {
 }
 /* Hover */
 
-main .hero .desc div button:hover {
+.hero .desc div button:hover {
   transform: scale(1.15);
 }
 
 /* Why Us */
 
 .whyUs {
-  position: relative;
+  padding: 49px 258px 0 258px;
+  width: 100%;
+  height: 925px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
 }
 
+.whyUs .dots {
+  display: flex;
+  justify-content: center;
+}
+
+.whyUs .dots h1 {
+  color: #0f103f;
+  font-family: Inter;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 143.203%;
+  margin-top: 38px;
+}
+
+.whyUs .cards {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 1000px;
+}
+
+.whyUs .cards .cardMain {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.whyUs .cards .cardMain .first,
+.whyUs .cards .cardMain .second,
+.whyUs .cards .cardMain .third {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+
+.whyUs .cards .card {
+  z-index: 1;
+  padding: 48px 24px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  border-radius: 7px;
+  background: #fff;
+  color: rgba(15, 27, 135, 0.84);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 143.203%; /* 42.961px */
+  box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.08);
+}
+
+/* Images */
+#dot1 {
+  margin-right: -25px;
+  margin-bottom: 10px;
+}
+
+#dot2 {
+  margin-left: -19px;
+  margin-bottom: -70px;
+}
+
+#vector1 {
+  position: absolute;
+  transition: all 10s linear 3s;
+}
+
+#vector2 {
+  position: absolute;
+}
+
+/* Transforms */
+
+#vector1:active {
+  transform: rotateX("137deg"), rotateX("137deg"), rotateX("137deg");
+}
+
+/* Review Section CSS*/
