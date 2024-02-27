@@ -81,6 +81,7 @@ priority.</p>
             <img src={hero} id='hero'/> 
             <img src={ yellowVector} id='yellowVector' />
             <img src={Vector} id='vector' />
+
           </section>
 
 
@@ -94,9 +95,9 @@ priority.</p>
 
 
           {/*Reviwe Section*/}
-          <section>
-            <div>
-
+          <section className='review'>
+            <div className='review-box'>
+              
             </div>
           </section>
 
