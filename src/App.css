@@ -357,11 +357,47 @@ main {
 
 #vector1 {
   position: absolute;
-  transition: all 10s linear 3s;
+  -webkit-animation: spin 3s linear infinite;
+  -webkit-animation-delay: 2s;
+  -moz-animation: spin 3s linear infinite;
+  -moz-animation-delay: 2s;
+  animation: spin 6s linear infinite;
+  animation-delay: 2s;
 }
 
 #vector2 {
   position: absolute;
+  -webkit-animation: rspin 3s linear infinite;
+  -webkit-animation-delay: 2s;
+  -moz-animation: rspin 3s linear infinite;
+  -moz-animation-delay: 2s;
+  animation: rspin 6s linear infinite;
+  animation-delay: 2s;
+}
+
+
+/* Keyframes */
+
+@-webkit-keyframes spin {
+  100%{-webkit-transform: rotate(135deg);}
+}
+@-moz-keyframes spin {
+  100%{-webkit-transform: rotate(-90deg);}
+}
+@keyframes spin {
+  50%{-webkit-transform: rotate(45deg);}
+  100%{-webkit-transform: rotate(-125deg);}
+}
+
+@-webkit-keyframes rspin {
+  100%{-webkit-transform: rotate(-90deg);}
+}
+@-moz-keyframes rspin {
+  100%{-webkit-transform: rotate(135deg);}
+}
+@keyframes rspin {
+  50%{-webkit-transform: rotate(-125deg);}
+  100%{-webkit-transform: rotate(45deg);}
 }
 
 /* Connect Us */
