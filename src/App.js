@@ -1,4 +1,5 @@
 import "./App.css";
+import eventlogofooter from './icon/eventEcofooter.png'
 import eventeco from "./icon/eventeco.png";
 import logo from "./icon/logo-nav-qr.png";
 import hero from "./icon/hero-image.svg";
@@ -32,11 +33,14 @@ import Vector2 from "./icon/Vector-2.svg";
 import whyusEle1 from "./icon/whyus-ele-1.svg";
 import whyusEle2 from "./icon/whyus-ele-2.svg";
 import graphic from "./icon/graphic.svg";
-
+import rectangle from './icon/Rectangle.png'
+import footerLocation from './icon/footeLocation.png'
+import footerNumber from './icon/footerNumber.png'
+import footerMail from './icon/footerMail.png'
 function App() {
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper" id="home">
         {/* Header */}
         <header>
           {/* NavBar */}
@@ -49,10 +53,10 @@ function App() {
             <div className="components">
               <ul>
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#home">Home</a>
                 </li>
                 <li>
-                  <a href="#">Why US</a>
+                  <a href="#whyus">Why US</a>
                 </li>
                 <li>
                   <a href="#">Our Team</a>
@@ -61,7 +65,7 @@ function App() {
                   <a href="#">Review</a>
                 </li>
                 <li>
-                  <a href="#">Contact Us</a>
+                  <a href="#connectUs">Contact Us</a>
                 </li>
               </ul>
             </div>
@@ -107,7 +111,7 @@ function App() {
           </section>
 
           {/* Why us */}
-          <section className="whyUs">
+          <section className="whyUs" id="whyus">
             <div className="dots">
               <img src={whyusEle1} id="dot1" />
               <h1>Why Us</h1>
@@ -139,7 +143,7 @@ function App() {
 
           {/* Connect US */}
 
-          <section className="connectUs">
+          <section className="connectUs" id="connectUs">
             <div className="title">
               <h1>Connect Us</h1>
               <h4>We are here for you! How can we help?</h4>
@@ -167,20 +171,75 @@ function App() {
               <div className="form">
                 <input type="text" placeholder="Name" />
                 <input type="text" placeholder="Email" />
-                <input type="text" placeholder="Subject"/>
+                <input type="text" placeholder="Subject" />
                 <textarea name="" id="" cols="30" rows="10" placeholder="Go ahead, We are listening..."></textarea>
                 <button>submit</button>
               </div>
             </div>
-           
           </section>
 
+          {/* Subscribe */}
 
+          <section className="subscribe">
+            <img src={subscribe} id="subImg" />
+            <div className="content">
+              <h1>Subscribe For More Info</h1>
+              <div className="subInput">
+                <div className="subEmail">
+                  <img src={mailSubscribe} id="mailSub" />
+                  <input type="text" id="subInput" placeholder="Your email here" />
+                </div>
+                <div className="subBtn">
+                  <button>Subsribe Now</button>
+                </div>
+              </div>
+            </div>
+          </section>
 
+          {/* Footer */}
 
-               
-
-
+          <section className="footer">
+            <img src={rectangle} id="footImg" />
+            <div className="footContent">
+              <div className="getStarted">
+                <h1>Ready to get started?</h1>
+                <div>
+                  <button>Create Event </button>
+                </div>
+              </div>
+              <div className="footSec">
+                <div className="leftSec">
+                <img src={eventlogofooter} id="eventFooter" height={75} />
+                </div>
+                <div className="rightSec">
+                  <div className="footNav">
+                    <p><a href="#home">Home</a></p>
+                    <p><a href="#whyus">Why Us</a></p>
+                    <p><a href="">Our Team</a></p>
+                    <p><a href="">Review</a></p>
+                    <p><a href="#connectUs">Contact Us </a></p>
+                  </div>
+                  <div className="footLoc">
+                    <div className="locFlex">
+                      <img src={footerLocation} alt="" />
+                      <p>Sahjanad Hostel</p>
+                    </div>
+                    <div className="locFlex">
+                      <img src={footerNumber} alt="" />
+                      <p>+91987654321</p>
+                    </div>
+                    <div className="locFlex">
+                      <img src={footerMail} alt="" />
+                      <p>noreply.eventeco@yahoo.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="rights">
+            <h1>©2024 EventEco. All Rights Reserved.</h1>
+            </div>
+            </div>
+          </section>
         </main>
       </div>
     </>
