@@ -53,7 +53,7 @@ function App() {
                         <div className="components">
                             <ul>
                                 <li>
-                                    <a href="#home">Preet</a>
+                                    <a href="#home">Home</a>
                                 </li>
                                 <li>
                                     <a href="#whyus">Why US</a>
@@ -87,7 +87,7 @@ function App() {
                                 <button>Create Our Event </button>
                             </div>
                         </div>
-                        
+
 
                         <div className="content">
                             <div>
