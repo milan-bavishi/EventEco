@@ -55,7 +55,7 @@ function App() {
                                 <li>
                                     <a href="#home">Home</a>
                                 </li>
-                                <li>
+                                <li>  
                                     <a href="#whyus">Why US</a>
                                 </li>
                                 <li>
