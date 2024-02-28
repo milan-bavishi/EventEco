@@ -53,7 +53,7 @@ function App() {
                         <div className="components">
                             <ul>
                                 <li>
-                                    <a href="#home">Home</a>
+                                    <a href="#home">Preet</a>
                                 </li>
                                 <li>  
                                     <a href="#whyus">Why US</a>
