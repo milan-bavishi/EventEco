@@ -1,5 +1,5 @@
 import "./Home.css";
-
+import { Link } from "react-router-dom";
 
 import eventlogofooter from './icon/eventEcofooter.png'
 import eventeco from "./icon/eventeco.png";
@@ -40,6 +40,7 @@ import footerLocation from './icon/footeLocation.png'
 import footerNumber from './icon/footerNumber.png'
 import footerMail from './icon/footerMail.png'
 import Login from '../login/Login'
+import Signup from "../signup/Signup";
 
 
 function App() {
@@ -76,7 +77,9 @@ function App() {
                         </div>
                         {/* Button */}
                         <div className="button">
-                            <button>Create Event</button>
+                            <Link to="/signup">
+                                <button>Create Event</button>
+                            </Link>
                         </div>
                     </nav>
                 </header>
@@ -89,11 +92,12 @@ function App() {
                                 <h2>Safe Event No Stress</h2>
                             </div>
                             <div>
-                                <button>Create Our Event </button>
+                            {/* <button>Create Our Event </button> */}
+                                <Link to="/signup">
+                                    <button>Create Our Event </button>
+                                </Link>
                             </div>
                         </div>
-
-
                         <div className="content">
                             <div>
                                 <h1>Everything An Event Needs</h1>
@@ -249,9 +253,9 @@ function App() {
                 </main>
             </div>
 
-           
-                
-            
+
+
+
         </>
     );
 }
