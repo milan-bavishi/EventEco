@@ -214,6 +214,7 @@ function App() {
                             <div className="getStarted">
                                 <h1>Ready to get started?</h1>
                                 <div>
+                                
                                     <button>Create Event </button>
                                 </div>
                             </div>
