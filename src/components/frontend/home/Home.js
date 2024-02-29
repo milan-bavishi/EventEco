@@ -166,7 +166,7 @@ function App() {
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={20}
-              slidesPerView={3}
+              slidesPerView={2}
               autoplay={{ delay: 2500, disableOnInteraction: false }}
               loop={true}
               pagination={{ dynamicBullets: true }}
