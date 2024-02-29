@@ -1,4 +1,6 @@
 import "./Home.css";
+
+
 import eventlogofooter from './icon/eventEcofooter.png'
 import eventeco from "./icon/eventeco.png";
 import logo from "./icon/logo-nav-qr.png";
@@ -37,6 +39,9 @@ import rectangle from './icon/Rectangle.png'
 import footerLocation from './icon/footeLocation.png'
 import footerNumber from './icon/footerNumber.png'
 import footerMail from './icon/footerMail.png'
+import Login from '../login/Login'
+
+
 function App() {
     return (
         <>
@@ -55,7 +60,7 @@ function App() {
                                 <li>
                                     <a href="#home">Home</a>
                                 </li>
-                                <li>  
+                                <li>
                                     <a href="#whyus">Why US</a>
                                 </li>
                                 <li>
@@ -243,6 +248,10 @@ function App() {
                     </section>
                 </main>
             </div>
+
+           
+                
+            
         </>
     );
 }
