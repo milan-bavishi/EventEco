@@ -1,9 +1,9 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css/pagination";
 
 import eventlogofooter from "./icon/eventEcofooter.png";
 import eventeco from "./icon/eventeco.png";
@@ -154,101 +154,213 @@ function App() {
             </div>
           </section>
 
+          {/* Review */}
+
+          <div className="review" id="review">
+            <h1>Hear From Our Happy Clients</h1>
+          </div>
+
           {/* Slider */}
 
           <section className="slider">
-          <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
-                spaceBetween={50}
-                slidesPerView={1}
-                autoplay={{ delay: 2500, disableOnInteraction: false }}
-                loop={true}
-                pagination={{ dynamicBullets: true }}
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={20}
+              slidesPerView={3}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              loop={true}
+              pagination={{ dynamicBullets: true }}
+              className="swipe"
             >
-                <SwiperSlide>
+              <SwiperSlide>
+                <div className='sliderMain'>
+                  <div>
+                    <img src="" alt="" />
+                    <h1>Hello</h1>
+                  </div>
+                  <div className='sliContent'>
+                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                  </div>
+                  <div className='sliderAbout'>
                     <div>
-                        <div>
-                            <img src="" alt="" />
-                        </div>
-                        <div>
-                            <p>
-
-                            </p>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="" alt="" />
-                            </div>
-                            <div>
-                                <h1></h1>
-                                <h2></h2>
-                            </div>
-                        </div>
+                      <img src="" alt="" />
+                      <h1>Hyy</h1>
                     </div>
-                    </SwiperSlide>
-                <SwiperSlide>
+                    <div className='person'>
+                      <p>Jenny Wilson</p>
+                      <span>Trust Administrator</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='sliderMain'>
+                  <div>
+                    <img src="" alt="" />
+                    <h1>Hello</h1>
+                  </div>
+                  <div className='sliContent'>
+                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                  </div>
+                  <div className='sliderAbout'>
                     <div>
-                        <div>
-                            <img src="" alt="" />
-                        </div>
-                        <div>
-                            <p>
-
-                            </p>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="" alt="" />
-                            </div>
-                            <div>
-                                <h1></h1>
-                                <h2></h2>
-                            </div>
-                        </div>
+                      <img src="" alt="" />
+                      <h1>Hyy</h1>
                     </div>
-                    </SwiperSlide>
-                <SwiperSlide>
+                    <div className='person'>
+                      <p>Jenny Wilson</p>
+                      <span>Trust Administrator</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='sliderMain'>
+                  <div>
+                    <img src="" alt="" />
+                    <h1>Hello</h1>
+                  </div>
+                  <div className='sliContent'>
+                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                  </div>
+                  <div className='sliderAbout'>
                     <div>
-                        <div>
-                            <img src="" alt="" />
-                        </div>
-                        <div>
-                            <p>
-
-                            </p>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="" alt="" />
-                            </div>
-                            <div>
-                                <h1></h1>
-                                <h2></h2>
-                            </div>
-                        </div>
+                      <img src="" alt="" />
+                      <h1>Hyy</h1>
                     </div>
-                    </SwiperSlide>
-                <SwiperSlide>
+                    <div className='person'>
+                      <p>Jenny Wilson</p>
+                      <span>Trust Administrator</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='sliderMain'>
+                  <div>
+                    <img src="" alt="" />
+                    <h1>Hello</h1>
+                  </div>
+                  <div className='sliContent'>
+                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                  </div>
+                  <div className='sliderAbout'>
                     <div>
-                        <div>
-                            <img src="" alt="" />
-                        </div>
-                        <div>
-                            <p>
-
-                            </p>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="" alt="" />
-                            </div>
-                            <div>
-                                <h1></h1>
-                                <h2></h2>
-                            </div>
-                        </div>
+                      <img src="" alt="" />
+                      <h1>Hyy</h1>
                     </div>
-                    </SwiperSlide>
+                    <div className='person'>
+                      <p>Jenny Wilson</p>
+                      <span>Trust Administrator</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='sliderMain'>
+                  <div>
+                    <img src="" alt="" />
+                    <h1>Hello</h1>
+                  </div>
+                  <div className='sliContent'>
+                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                  </div>
+                  <div className='sliderAbout'>
+                    <div>
+                      <img src="" alt="" />
+                      <h1>Hyy</h1>
+                    </div>
+                    <div className='person'>
+                      <p>Jenny Wilson</p>
+                      <span>Trust Administrator</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='sliderMain'>
+                  <div>
+                    <img src="" alt="" />
+                    <h1>Hello</h1>
+                  </div>
+                  <div className='sliContent'>
+                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                  </div>
+                  <div className='sliderAbout'>
+                    <div>
+                      <img src="" alt="" />
+                      <h1>Hyy</h1>
+                    </div>
+                    <div className='person'>
+                      <p>Jenny Wilson</p>
+                      <span>Trust Administrator</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='sliderMain'>
+                  <div>
+                    <img src="" alt="" />
+                    <h1>Hello</h1>
+                  </div>
+                  <div className='sliContent'>
+                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                  </div>
+                  <div className='sliderAbout'>
+                    <div>
+                      <img src="" alt="" />
+                      <h1>Hyy</h1>
+                    </div>
+                    <div className='person'>
+                      <p>Jenny Wilson</p>
+                      <span>Trust Administrator</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='sliderMain'>
+                  <div>
+                    <img src="" alt="" />
+                    <h1>Hello</h1>
+                  </div>
+                  <div className='sliContent'>
+                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                  </div>
+                  <div className='sliderAbout'>
+                    <div>
+                      <img src="" alt="" />
+                      <h1>Hyy</h1>
+                    </div>
+                    <div className='person'>
+                      <p>Jenny Wilson</p>
+                      <span>Trust Administrator</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='sliderMain'>
+                  <div>
+                    <img src="" alt="" />
+                    <h1>Hello</h1>
+                  </div>
+                  <div className='sliContent'>
+                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                  </div>
+                  <div className='sliderAbout'>
+                    <div>
+                      <img src="" alt="" />
+                      <h1>Hyy</h1>
+                    </div>
+                    <div className='person'>
+                      <p>Jenny Wilson</p>
+                      <span>Trust Administrator</span>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
             </Swiper>
           </section>
 
@@ -320,7 +432,7 @@ function App() {
           {/* Footer */}
 
           <section className="footer">
-            <img src={rectangle} id="footImg" />
+            <img src={rectangle} id="footImg" alt="rectangle" />
             <div className="footContent">
               <div className="getStarted">
                 <h1>Ready to get started?</h1>
