@@ -45,6 +45,10 @@ import footerNumber from "./icon/footerNumber.png";
 import footerMail from "./icon/footerMail.png";
 import Login from "../login/Login";
 import Signup from "../signup/Signup";
+import photo1 from './icon/photo1.png'
+import photo2 from './icon/photo2.png'
+import photo3 from './icon/photo3.png'
+import qutos from './icon/qutos.png'
 
 function App() {
   return (
@@ -157,6 +161,10 @@ function App() {
           {/* Review */}
 
           <div className="review" id="review">
+          <img src={reviewEllipse1} id="review1" />
+          <img src={reviewEllipse1} id="review2" />
+          <img src={reviewEllipse3} id="review3" />
+          <img src={reviewEllipse4} id="review4" />
             <h1>Hear From Our Happy Clients</h1>
           </div>
 
@@ -175,16 +183,14 @@ function App() {
               <SwiperSlide>
                 <div className='sliderMain'>
                   <div>
-                    <img src="" alt="" />
-                    <h1>Hello</h1>
+                    <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
                     <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src="" alt="" />
-                      <h1>Hyy</h1>
+                      <img src={photo1} alt="" />
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
@@ -196,16 +202,13 @@ function App() {
               <SwiperSlide>
                 <div className='sliderMain'>
                   <div>
-                    <img src="" alt="" />
-                    <h1>Hello</h1>
+                    <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
-                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
-                  </div>
+                    <p>"Great session! Dani was super helpful. She shared some practical advice on how can lorem ip we go about refining our service offerings."</p>                  </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src="" alt="" />
-                      <h1>Hyy</h1>
+                      <img src={photo2} alt="" />
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
@@ -217,16 +220,14 @@ function App() {
               <SwiperSlide>
                 <div className='sliderMain'>
                   <div>
-                    <img src="" alt="" />
-                    <h1>Hello</h1>
+                    <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
                     <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src="" alt="" />
-                      <h1>Hyy</h1>
+                      <img src={photo3} alt="" />
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
@@ -238,16 +239,14 @@ function App() {
               <SwiperSlide>
                 <div className='sliderMain'>
                   <div>
-                    <img src="" alt="" />
-                    <h1>Hello</h1>
+                    <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
                     <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src="" alt="" />
-                      <h1>Hyy</h1>
+                      <img src={photo1} alt="" />
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
@@ -259,16 +258,14 @@ function App() {
               <SwiperSlide>
                 <div className='sliderMain'>
                   <div>
-                    <img src="" alt="" />
-                    <h1>Hello</h1>
+                    <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
                     <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src="" alt="" />
-                      <h1>Hyy</h1>
+                      <img src={photo2} alt="" />
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
@@ -280,16 +277,14 @@ function App() {
               <SwiperSlide>
                 <div className='sliderMain'>
                   <div>
-                    <img src="" alt="" />
-                    <h1>Hello</h1>
+                    <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
                     <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src="" alt="" />
-                      <h1>Hyy</h1>
+                      <img src={photo1} alt="" />
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
@@ -301,16 +296,15 @@ function App() {
               <SwiperSlide>
                 <div className='sliderMain'>
                   <div>
-                    <img src="" alt="" />
-                    <h1>Hello</h1>
+                    <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
                     <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src="" alt="" />
-                      <h1>Hyy</h1>
+                      <img src={photo2} alt="" />
+                      
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
@@ -322,16 +316,14 @@ function App() {
               <SwiperSlide>
                 <div className='sliderMain'>
                   <div>
-                    <img src="" alt="" />
-                    <h1>Hello</h1>
+                    <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
                     <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src="" alt="" />
-                      <h1>Hyy</h1>
+                      <img src={photo3} alt="" />
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
@@ -343,16 +335,14 @@ function App() {
               <SwiperSlide>
                 <div className='sliderMain'>
                   <div>
-                    <img src="" alt="" />
-                    <h1>Hello</h1>
+                    <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
                     <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src="" alt="" />
-                      <h1>Hyy</h1>
+                      <img src={photo1} alt="" />
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
