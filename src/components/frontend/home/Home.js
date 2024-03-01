@@ -377,7 +377,7 @@ function App() {
                   </div>
                   <div className="flex">
                     <img src={connectMail} alt="" />
-                    <p>noreply.eventeco@yahoo.com</p>
+                    <p>info@eventeco.online</p>
                   </div>
                 </div>
               </div>
@@ -463,7 +463,7 @@ function App() {
                     </div>
                     <div className="locFlex">
                       <img src={footerMail} alt="" />
-                      <p>noreply.eventeco@yahoo.com</p>
+                      <p>info@eventeco.online</p>
                     </div>
                   </div>
                 </div>
