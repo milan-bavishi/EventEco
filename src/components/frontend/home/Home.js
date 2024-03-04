@@ -84,7 +84,7 @@ function App() {
             </div>
             {/* Button */}
             <div className="button">
-              <Link to="/signup">
+              <Link to="/login">
                 <button>Create Event</button>
               </Link>
             </div>
