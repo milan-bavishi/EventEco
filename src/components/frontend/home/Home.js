@@ -100,7 +100,7 @@ function App() {
               </div>
               <div>
                 {/* <button>Create Our Event </button> */}
-                <Link to="/signup">
+                <Link to="/login">
                   <button>Create Our Event </button>
                 </Link>
               </div>
