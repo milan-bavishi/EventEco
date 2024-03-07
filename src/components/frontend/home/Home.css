@@ -54,7 +54,7 @@ nav .event {
 }
 
 nav .components {
-  width: 45%;
+  width: 35%;
 }
 
 nav .components ul {
@@ -832,7 +832,7 @@ main {
   justify-content: center;
   align-items: start;
   color: #fff;
-  gap: 12px;
+  gap: 23px;
 }
 
 .footer .footContent .footSec .rightSec .footNav p {
