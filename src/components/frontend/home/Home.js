@@ -72,9 +72,6 @@ function App() {
                   <a href="#whyus">Why US</a>
                 </li>
                 <li>
-                  <a href="#">Our Team</a>
-                </li>
-                <li>
                   <a href="#">Review</a>
                 </li>
                 <li>
@@ -441,9 +438,6 @@ function App() {
                     </p>
                     <p>
                       <a href="#whyus">Why Us</a>
-                    </p>
-                    <p>
-                      <a href="">Our Team</a>
                     </p>
                     <p>
                       <a href="">Review</a>
