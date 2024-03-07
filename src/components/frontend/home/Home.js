@@ -81,7 +81,7 @@ function App() {
             </div>
             {/* Button */}
             <div className="button">
-              <Link to="/signup">
+              <Link to="/login">
                 <button>Create Event</button>
               </Link>
             </div>
@@ -97,7 +97,7 @@ function App() {
               </div>
               <div>
                 {/* <button>Create Our Event </button> */}
-                <Link to="/signup">
+                <Link to="/login">
                   <button>Create Our Event </button>
                 </Link>
               </div>
