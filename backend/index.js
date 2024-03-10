@@ -7,7 +7,7 @@ const userRoutes = require("./routes/User");
 // const paymentRoutes = require("./routes/Payments");
 // const courseRoutes = require("./routes/Course");
 // const contactUsRoute = require("./routes/Contact");
-
+const Addperson = require("./model/Addperson");
 const dbConnect = require("./config/connect");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -40,6 +40,11 @@ app.get("/", (req, res) => {
 	});
 });
 
+app.get('/dashboard/resgistrationdata',(req,res)=>{
+		Addperson.find()
+		.then(Addperson => res.json(Addperson))
+		.catch(err => res.json(err))
+})
 app.listen(PORT, () => {
 	console.log(`App is running at ${PORT}`)
 })
