@@ -95,25 +95,3 @@ export function logout(navigate) {
 }
 
 
-export function aperson(email){
-  return async (dispatch) => {
-    const toastId = toast.loading("Loading...")
-    dispatch(setLoading(true))
-    try {
-       const response = await apiConnector("POST", 'http://localhost:4000/auth/aperson', {email})
-       
-        if(!response.data.success){
-          
-          throw new Error(response.data.msg)
-        }
-        toast.success("Data added Success");
-        navigate('/Dashboard');
-    }
-     catch (error) {
-      console.log("Dataadd API ERROR............", error)
-      toast.error(error.message)
-    }
-    dispatch(setLoading(false))
-    toast.dismiss(toastId)
-  }
-}

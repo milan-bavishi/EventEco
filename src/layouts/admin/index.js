@@ -12,7 +12,6 @@ const Index = () => {
   }
   return (
     <>
-     
         <>
           <div className="App">
             <div className="sidebar-collapse">
