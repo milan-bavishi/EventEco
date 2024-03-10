@@ -17,12 +17,13 @@
 
 
 .signupContainer_22 {
- width: 100%;
+ width: 1500px;
  height: calc(100vh - 9vh);
  padding: 15px;
  display: flex;
  justify-content: center;
  align-items: center;
+ ;
 }
 
 .formCenter_22{
@@ -31,6 +32,7 @@
   border: 1px solid #dedede;
   border-radius: 30px;
   padding: 20px;
+  
 }
 
 .formBtnContainer_22{

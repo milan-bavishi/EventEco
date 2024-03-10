@@ -18,6 +18,9 @@ const authSlice = createSlice({
     setLoading(state, value) {
       state.loading = value.payload;
     },
+    setaddpersonData(state, value) {
+      state.signupData = value.payload;
+    },
   },
 });
 
