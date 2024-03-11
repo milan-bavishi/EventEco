@@ -25,7 +25,7 @@ export default function ProfileDropdown() {
     <button className="relative" onClick={() => setOpen(true)}>
       <div className="ProfileDrop_22">
         <img src={Avtor} alt={`profile-${user?.firstName}`}  className="imageAtDropDown" />
-        <AiOutlineCaretDown className="text-sm text-richblack-100" />
+        <AiOutlineCaretDown className="text-sm text-richblack-100"/>
       </div>
       {open && (
         <div onClick={(e) => e.stopPropagation()}  ref = {ref}  className="DropDownContainer_22" >

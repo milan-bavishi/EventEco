@@ -5,7 +5,6 @@ const otpModel = require("../model/otp");
 const userModel = require('../model/userDetails');
 const mailSender = require('../transport/mailsender');
 const otpTemplate = require("../emailBody/verificationOtp");
-const addpersonModel = require("../model/Addperson");
 require("dotenv").config();
 
 //signUp
@@ -157,36 +156,6 @@ const sendOTP = async (req, res) => {
 const changePassword = async (req, res) => {};
 
 //Controller for addperson
-const aperson = async (req, res) => {
-  const {email} = req.body;
-
-  if(!email){
-    return res.json({
-      success:false,
-      msg:"Fill All the Fields"
-    })
-  }
 
 
-  const userPresent = await addpersonModel.findOne({email:email});
-
-  if(userPresent){
-    return res.json({
-      success:false,
-      msg:"User Alredy Exist"
-    })
-  }
-
-
-    const adperson = await addpersonModel.create({
-      email
-    })
-
-  return res.json({
-    success:true,
-    msg:"email Registred"
-  })
-};
-
-
-module.exports = { signUp, login, sendOTP, changePassword,aperson };
+module.exports = { signUp, login, sendOTP, changePassword};

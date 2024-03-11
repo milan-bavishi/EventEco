@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 
 const userRoutes = require("./routes/User");
+const eventRoutes = require("./routes/event");
 // const profileRoutes = require("./routes/Profile");
 // const paymentRoutes = require("./routes/Payments");
 // const courseRoutes = require("./routes/Course");
@@ -26,6 +27,7 @@ app.use(cors());
 
 //routes
 app.use("/auth", userRoutes);
+app.use("/event",eventRoutes);
 // app.use("/api/v1/profile", profileRoutes);
 // app.use("/api/v1/course", courseRoutes);
 // app.use("/api/v1/payment", paymentRoutes);
