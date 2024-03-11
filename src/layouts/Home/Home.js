@@ -53,7 +53,7 @@ import qutos from './icon/qutos.png'
 function App() {
   return (
     <>
-      <div className="wrapper" id="home">
+      <div className="homeWrapper" id="home">
         {/* Header */}
         <header>
           {/* NavBar */}
@@ -167,7 +167,7 @@ function App() {
 
           {/* Slider */}
 
-          <section className="slider">
+          <section className="homeSlider">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={20}
@@ -419,7 +419,7 @@ function App() {
           {/* Footer */}
 
           <section className="footer">
-            <img src={rectangle} id="footImg" alt="rectangle" />
+            <img src={rectangle} id="footImg" alt="rectangle"/>
             <div className="footContent">
               <div className="getStarted">
                 <h1>Ready to get started?</h1>

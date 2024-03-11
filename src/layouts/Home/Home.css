@@ -8,15 +8,19 @@ import "@fontsource/poppins/400.css"; // Specify weight  */
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .link {
   text-decoration: none;
 }
 
 /* Body */
 
-.wrapper {
+.homeWrapper {
   min-height: 100vh;
-  width: 98.95vw;
+  width: 100vw;
 }
 
 /* Header */
@@ -467,12 +471,12 @@ main {
 }
 /* Slider */
 
-.slider {
+.homeSlider {
   width: 100%;
   height: 600px;
 }
 
-.slider .swipe {
+.homeSlider .swipe {
   padding: 100px;
   height: 100%;
   display: flex;
@@ -480,9 +484,9 @@ main {
   width: 70%;
 }
 
-.slider .swipe .sliderMain {
+.homeSlider .swipe .sliderMain {
   display: flex;
-  padding: 41px var(--24, 24px);
+  padding: 41px 24px;
   flex-direction: column;
   justify-content: space-between;
   height: 400px;
@@ -492,12 +496,12 @@ main {
   box-shadow: 0px 5px 5px 3px rgba(89, 100, 157, 0.25);
 }
 
-.slider .swipe .sliderMain .sliContent {
+.homeSlider .swipe .sliderMain .sliContent {
   width: 100%;
   text-align: justify;
 }
 
-.slider .swipe .sliderMain .sliContent p {
+.homeSlider .swipe .sliderMain .sliContent p {
   color: var(--main-to, #0a142f);
   /* regular/p */
   font-family: Poppins;
@@ -507,13 +511,13 @@ main {
   line-height: 24px; /* 150% */
 }
 
-.slider .swipe .sliderMain .sliderAbout {
+.homeSlider .swipe .sliderMain .sliderAbout {
   display: flex;
   width: 100%;
   gap: 20px;
 }
 
-.slider .swipe .sliderMain .sliderAbout .person {
+.homeSlider .swipe .sliderMain .sliderAbout .person {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -521,7 +525,7 @@ main {
   padding: 10px;
 }
 
-.slider .swipe .sliderMain .sliderAbout .person p {
+.homeSlider .swipe .sliderMain .sliderAbout .person p {
   color: var(--main-to, #0a142f);
   font-size: 16px;
   font-style: normal;
@@ -529,7 +533,7 @@ main {
   letter-spacing: -0.32px;
 }
 
-.slider .swipe .sliderMain .sliderAbout .person span {
+.homeSlider .swipe .sliderMain .sliderAbout .person span {
   color: rgba(15, 27, 135, 0.84);
   font-size: 12px;
   font-style: normal;
@@ -770,7 +774,7 @@ main {
 
 .footer #footImg {
   position: absolute;
-  width: 100%;
+  width: 100vw;
 }
 
 .footer .footContent {

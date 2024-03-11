@@ -32,7 +32,7 @@
 
 /* Right Section */
 
-.details {
+.logDetails {
   width: 45%;
   height: 100%;
   padding: 50px;
@@ -42,25 +42,25 @@
   justify-content: space-between;
 }
 
-.details .logDet {
+.logDetails .logDet {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.details .logDetails {
+.logDetails .loginDetails {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.details .logDetails .logHeading {
+.logDetails .loginDetails .logHeading {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.details .logDetails .logHeading h2 {
+.logDetails .loginDetails .logHeading h2 {
   color: #15063f;
   font-family: Roboto;
   font-size: 32px;
@@ -69,7 +69,7 @@
   line-height: normal;
   letter-spacing: 0.32px;
 }
-.details .logDetails .logHeading p {
+.logDetails .loginDetails .logHeading p {
   color: #3b4359;
   font-family: Roboto;
   font-size: 18px;
@@ -77,7 +77,7 @@
   font-weight: 500;
   line-height: normal;
 }
-.details .welcome {
+.logDetails .welcome {
   color: #15063f;
   font-family: "Playfair Display";
   font-size: 1.5rem;
@@ -87,13 +87,13 @@
   letter-spacing: 0.9px;
 }
 
-.details .logDetails .formSection .logForm {
+.logDetails .loginDetails .formSection .logForm {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-.details .logDetails .formSection .logForm .formInput {
+.logDetails .loginDetails .formSection .logForm .formInput {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -107,7 +107,7 @@
   gap: 10px;
 }
 
-.details .formSection .logForm input {
+.loginDetails .formSection .logForm input {
   display: flex;
   width: 520px;
   padding: 17px 16px;
@@ -120,7 +120,7 @@
   font-size: 1rem;
 }
 
-.details .formSection .logForm input::placeholder {
+.loginDetails .formSection .logForm input::placeholder {
   color: #aaa;
   font-family: Inter;
   font-size: 16px;
@@ -147,13 +147,13 @@
   line-height: normal;
 }
 
-.details .account {
+.logDetails .account {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.details .account .link {
+.logDetails .account .link {
   color: #15063f;
   font-family: Inter;
   font-size: 18px;

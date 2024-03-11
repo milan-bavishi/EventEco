@@ -51,12 +51,12 @@ const Login = () => {
           <SwiperSlide><img src={photo5} alt="" /></SwiperSlide>
         </Swiper>
       </div>
-      <div className='details'>
+      <div className='logDetails'>
         <div className='logDet'>
           <div className="welcome">
             <h1>Welcome Back!</h1>
           </div>
-          <div className='logDetails'>
+          <div className='loginDetails'>
             <div className='logHeading'>
               <h2>Login</h2>
               <p>Please enter your details.</p>
