@@ -7,6 +7,13 @@ import {signUp}  from '../../../services/operation/authApi';
 import './EmailVerify.css'
 import { toast } from 'react-toastify';
 
+import photo1 from "./images/photo1.jpg"
+import photo2 from "./images/photo2.jpg"
+import photo3 from "./images/photo3.jpg"
+import photo4 from "./images/photo4.jpg"
+import photo5 from "./images/photo5.jpg"
+
+
 const EmailVerify = () => {
   const [otp, setOtp] = useState();
   const { signupData, loading } = useSelector((state) => state.auth);
