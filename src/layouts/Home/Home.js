@@ -9,7 +9,7 @@ import eventlogofooter from "./icon/eventEcofooter.png";
 import eventeco from "./icon/eventeco.png";
 import logo from "./icon/logo-nav-qr.png";
 import hero from "./icon/hero-image.svg";
-import image from "./icon/image.png";
+import image from "./icon/image.png"; 
 import image2 from "./icon/image2.png";
 import image3 from "./icon/image3.png";
 import Ellipse1 from "./icon/Ellipse1.svg";
@@ -97,7 +97,7 @@ function App() {
               </div>
               <div>
                 {/* <button>Create Our Event </button> */}
-                <Link to="/login">
+                <Link to="/login" className="link">
                   <button>Create Our Event </button>
                 </Link>
               </div>
@@ -424,7 +424,9 @@ function App() {
               <div className="getStarted">
                 <h1>Ready to get started?</h1>
                 <div>
-                <button>Create Event </button>
+                <Link to="/login" className="link">
+                  <button>Create Our Event </button>
+                </Link>
                 </div>
               </div>
               <div className="footSec">

@@ -8,11 +8,15 @@ import "@fontsource/poppins/400.css"; // Specify weight  */
   scroll-behavior: smooth;
 }
 
+.link {
+  text-decoration: none;
+}
+
 /* Body */
 
 .wrapper {
   min-height: 100vh;
-  width: 100vw;
+  width: 98.95vw;
 }
 
 /* Header */
@@ -40,7 +44,6 @@ nav {
     linear-gradient(to right, #0b427000, #060e3f);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  
 }
 
 #eventechoLogo {
@@ -51,6 +54,8 @@ nav {
 }
 nav .event {
   width: 10%;
+  display: flex;
+  align-items: center;
 }
 
 nav .components {
@@ -80,7 +85,7 @@ nav .components ul li a {
 }
 
 nav .button button {
-  padding: 14px 25px 14px 27px;
+  padding: 12px 15px 12px 27px;
   border-radius: 9999px;
   color: #ffffff;
   font-size: 22px;
@@ -160,6 +165,9 @@ main {
   background-color: #0a142f;
   transition: all 200ms linear;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero .content {
@@ -434,25 +442,25 @@ main {
   line-height: 143.203%; /* 71.602px */
 }
 
-#review1{
+#review1 {
   position: absolute;
   left: 268px;
   top: 80px;
 }
 
-#review2{
+#review2 {
   position: absolute;
   right: 330px;
   top: -55px;
 }
 
-#review3{
+#review3 {
   position: absolute;
   left: 298px;
   top: -40px;
 }
 
-#review4{
+#review4 {
   position: absolute;
   right: 268px;
   top: 30px;
