@@ -36,7 +36,6 @@
   width: 45%;
   height: 100%;
   padding: 50px;
-  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -102,7 +101,6 @@
 .formSection {
   display: flex;
   width: 520px;
-  padding: 17px 16px;
   align-items: center;
   gap: 10px;
 }
