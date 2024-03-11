@@ -36,7 +36,7 @@ const Login = () => {
   }
 
   return (
-    <div className='wrapper'>
+    <div className='loginWrapper'>
       <div className='slider'>
         {/* <img src={photo1} /> */}
         <Swiper navigation={true}
