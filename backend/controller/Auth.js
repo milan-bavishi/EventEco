@@ -155,6 +155,11 @@ const sendOTP = async (req, res) => {
 const changePassword = async (req, res) => {};
 
 //Controller for addperson
+const data = async (req, res) => {
+  userModel.find()
+  .then(users => res.json(users))
+  .catch(err => res.json(err))
+};
 
 
-module.exports = { signUp, login, sendOTP, changePassword};
+module.exports = { signUp, login, sendOTP, changePassword,data};

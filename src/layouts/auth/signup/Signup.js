@@ -68,7 +68,7 @@ const Signup = () => {
       </div>
       <div className='signRightSection'>
         {
-          loading ? (<>Loading</>) : (
+           (
             <div className='signTop'>
               <div className='signDetails'>
                 <div className='signStart'>
