@@ -50,3 +50,10 @@ app.get('/dashboard/resgistrationdata',(req,res)=>{
 app.listen(PORT, () => {
 	console.log(`App is running at ${PORT}`)
 })
+
+app.use(
+    cors({
+        credentials: true,
+        origin: "http://localhost:3000",
+    })
+);

@@ -7,13 +7,6 @@ import {signUp}  from '../../../services/operation/authApi';
 import './EmailVerify.css'
 import { toast } from 'react-toastify';
 
-import photo1 from "./images/photo1.jpg"
-import photo2 from "./images/photo2.jpg"
-import photo3 from "./images/photo3.jpg"
-import photo4 from "./images/photo4.jpg"
-import photo5 from "./images/photo5.jpg"
-
-
 const EmailVerify = () => {
   const [otp, setOtp] = useState();
   const { signupData, loading } = useSelector((state) => state.auth);
@@ -41,11 +34,10 @@ const EmailVerify = () => {
   };
   return (
 
-    <div className='vrifyEmailContainer_22'>
-      <div className='verifyEmailformCenter_22'>
+    <div className='verifyWrapper'>
+      <div className='verifyMain'>
         <h1>Verify Email</h1>
-        
-        <form  onSubmit={signupHandler} className='verifyEmailForm_22' >
+        <form  onSubmit={signupHandler} className='verifyForm' >
           <p className='paraAtVerify_22'>A verification code has been sent to you. Enter the code below</p>
           <OtpInput
             className="otpContainer_22"
