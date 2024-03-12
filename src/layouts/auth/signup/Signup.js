@@ -31,7 +31,6 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   })
-  const [accountType, setAccountType] = useState('user');
   const { firstName, lastName, email, password, confirmPassword } = formData
   const { loading } = useSelector((state) => state.auth)
 
@@ -45,11 +44,11 @@ const Signup = () => {
     console.log("Data Sub,itted");
     console.log(formData)
     if (password !== confirmPassword) { toast.error("Passwords do not match"); return; }
-    const signupData = { ...formData, accountType };
+    const signupData = { formData};
     dispatch(setSignupData(signupData))                                    // Setting signup data to state To be used after otp verification
     dispatch(sendOtp(formData.email, navigate))                           // Send OTP to user for verification
     setFormData({ firstName: "", lastName: "", email: "", password: "", confirmPassword: "", })           // Reset
-    setAccountType('user')
+    // setAccountType('user')
   }
 
   return (
@@ -80,8 +79,9 @@ const Signup = () => {
                     <h2>Create an account</h2>
                     <h4>Please enter your details.</h4>
                   </div>
+                  
                   <div className='signSecondSection'>
-                    <form action="" className='signForm'>
+                    <form method='POST' onSubmit={handleOnSubmit} action="" className='signForm'>
                       <div className='signInputs'>
                         <div className='inputName'>
                           <input type="text"
@@ -141,6 +141,7 @@ const Signup = () => {
                   Log in
                 </Link>
               </div>
+              
             </div>
           )
         }

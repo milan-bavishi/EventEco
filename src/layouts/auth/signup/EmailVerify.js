@@ -33,9 +33,9 @@ const EmailVerify = () => {
     if(otp===undefined){
       return toast.error("Fill The OTP")
     }
-    const { accountType,  firstName, lastName, email, password, confirmPassword, } = signupData;
+    const {   firstName, lastName, email, password, confirmPassword, } = signupData;
     dispatch(
-      signUp( accountType,  firstName, lastName, email, password, confirmPassword,  otp, navigate )
+      signUp(  firstName, lastName, email, password, confirmPassword,  otp, navigate )
       )
     
   };
@@ -64,9 +64,7 @@ const EmailVerify = () => {
               <Link to="/signup" className='verifyEmailLastLinkStyle_22'>
                 Back To Signup
               </Link>
-              <button >
-                Resend It
-              </button>
+              
             </div>
           </div>
         </form>

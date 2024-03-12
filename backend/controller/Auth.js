@@ -9,9 +9,9 @@ require("dotenv").config();
 
 //signUp
 const signUp = async (req, res) => {
-  const {accountType,  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
+  const {  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
 
-  if(!accountType || !firstName || !lastName || !email || !password || !confirmPassword || !otp){
+  if( !firstName || !lastName || !email || !password || !confirmPassword || !otp){
     return res.json({
       success:false,
       msg:"Fill All the Fields"
@@ -43,7 +43,6 @@ const signUp = async (req, res) => {
       lastName,
       email,
       password:hasedPassword,
-      accountType
     })
 
   return res.json({

@@ -27,12 +27,12 @@ export function sendOtp(email, navigate) {
   }
 
 
-export function signUp(accountType,  firstName, lastName, email, password, confirmPassword , otp, navigate){
+export function signUp(  firstName, lastName, email, password, confirmPassword , otp, navigate){
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
-       const response = await apiConnector("POST", 'http://localhost:4000/auth/signup', {accountType,  firstName, lastName, email, password,confirmPassword,  otp})
+       const response = await apiConnector("POST", 'http://localhost:4000/auth/signup', { firstName, lastName, email, password,confirmPassword,  otp})
        
         if(!response.data.success){
           
