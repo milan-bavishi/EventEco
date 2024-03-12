@@ -3,7 +3,7 @@ import OtpInput from 'react-otp-input';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {signUp}  from '../../../services/operation/authApi';
+import { signUp } from '../../../services/operation/authApi';
 import './EmailVerify.css'
 import { toast } from 'react-toastify';
 
@@ -14,8 +14,8 @@ const EmailVerify = () => {
   const navigate = useNavigate();
 
 
-  useEffect(()=>{
-    if(!signupData){
+  useEffect(() => {
+    if (!signupData) {
       navigate('/signup');
     }
   });
@@ -23,22 +23,21 @@ const EmailVerify = () => {
 
   const signupHandler = (e) => {
     e.preventDefault();
-    if(otp===undefined){
+    if (otp === undefined) {
       return toast.error("Fill The OTP")
     }
-    const {   firstName, lastName, email, password, confirmPassword, } = signupData;
+    const { firstName, lastName, email, password, confirmPassword, } = signupData;
     dispatch(
-      signUp(  firstName, lastName, email, password, confirmPassword,  otp, navigate )
-      )
-    
+      signUp(firstName, lastName, email, password, confirmPassword, otp, navigate)
+    )
+
   };
   return (
-
     <div className='verifyWrapper'>
       <div className='verifyMain'>
         <h1>Verify Email</h1>
-        <form  onSubmit={signupHandler} className='verifyForm' >
-          <p className='paraAtVerify_22'>A verification code has been sent to you. Enter the code below</p>
+        <form onSubmit={signupHandler} className='verifyForm' >
+          <p className='verifyPara'>A verification code has been sent to you. Enter the code below</p>
           <OtpInput
             className="otpContainer_22"
             value={otp}
@@ -47,21 +46,18 @@ const EmailVerify = () => {
             renderSeparator={<span>-</span>}
             renderInput={(props) => <input {...props} className='inputAtOTP_22' />}
           />
-
-          <div className='lastSectionAtVerify_22'>
-            <button type="submit" className='VerifyOtpSubmitBtn_22'>
+          <div className='verifyButton'>
+            <button type="submit" className='verifyBtn'>
               Verify Email
             </button>
-            <div className='verifyEmailLastLink_22'>
-              <Link to="/signup" className='verifyEmailLastLinkStyle_22'>
+            <div className='backToSignUp'>
+              <Link to="/signup" className='back'>
                 Back To Signup
               </Link>
-              
             </div>
           </div>
         </form>
       </div>
-
     </div>
   )
 }
