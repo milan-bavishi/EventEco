@@ -15,7 +15,7 @@ import Admin from "./layouts/admin/index"
 import Addperson from "./layouts/admin/views/Addperson"
 import Authoritiesdata from "./layouts/admin/views/Authoritiesdata"
 import Checkindata from "./layouts/admin/views/Checkindata"
-import Registerevent from "./layouts/admin/views/Registerevent"
+import Registerevent from "./layouts/admin/views/Registerevent/Registerevent"
 import Resgistrationdata from "./layouts/admin/views/Resgistrationdata"
 
 function App() {

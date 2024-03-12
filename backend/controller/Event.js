@@ -1,34 +1,40 @@
 
 const otpGenerator = require("otp-generator");
-const eventModel = require('../model/AddEvent');
 const mailSender = require('../transport/mailsender');
 const otpTemplate = require("../emailBody/verificationOtp");
+const addeventModel = require("../model/addEvent.js")
 require("dotenv").config();
 
 //signUp
 const registerEvent = async (req, res) => {
   // const {accountType,  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
-  const { name,email } = req.body
+  const { organizerName,eventname ,organizerEmail,date,time,categories,venue,description } = req.body
 
-  if (!name || !email) {
+  if (!organizerName || !eventname || !organizerEmail || !date || !time || !categories || !venue || !description) {
     return res.json({
       success: false,
       msg: "Fill All the Fields"
     })
   }
 
-  let genratedOtp = otpGenerator.generate(8, {
+  let genratedOtp = otpGenerator.generate(6, {
     upperCaseAlphabets: false,
     specialChars: false,
     lowerCaseAlphabets: false,
   });
 
-  const registredUser = await eventModel.create({
-    name,
-    email,
+  const registerEvent = await addeventModel.create({
+    organizerName,
+    eventname ,
+    organizerEmail,
+    date,
+    time,
+    categories,
+    venue,
+    description,
     id:genratedOtp
   })
-  console.log(registredUser);
+  console.log(registerEvent);
 
   return res.json({
     success: true,
