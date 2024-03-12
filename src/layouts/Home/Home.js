@@ -378,7 +378,8 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="form">
+              {/* <div className="form"> */}
+              <form action=""  className="form">
                 <input type="text" placeholder="Name" />
                 <input type="text" placeholder="Email" />
                 <input type="text" placeholder="Subject" />
@@ -390,7 +391,8 @@ function App() {
                   placeholder="Go ahead, We are listening..."
                 ></textarea>
                 <button>submit</button>
-              </div>
+              {/* </div> */}
+              </form>
             </div>
           </section>
 

@@ -8,9 +8,9 @@ require("dotenv").config();
 //signUp
 const registerEvent = async (req, res) => {
   // const {accountType,  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
-  const { name } = req.body
+  const { name,email } = req.body
 
-  if (!name) {
+  if (!name || !email) {
     return res.json({
       success: false,
       msg: "Fill All the Fields"
@@ -25,6 +25,7 @@ const registerEvent = async (req, res) => {
 
   const registredUser = await eventModel.create({
     name,
+    email,
     id:genratedOtp
   })
   console.log(registredUser);
