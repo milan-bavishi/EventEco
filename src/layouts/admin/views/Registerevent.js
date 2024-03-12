@@ -1,4 +1,6 @@
 import React from 'react'
+import "./stylesheets/Registerevent.css"
+
 
 function Registerevent() {
   return (

@@ -18,30 +18,32 @@ export default function ProfileDropdown() {
   const ref = useRef(null)
 
   useOnClickOutside(ref, () => setOpen(false))
-  if(!user) return null
+  if (!user) return null
 
 
   return (
-    <button className="relative" onClick={() => setOpen(true)}>
-      <div className="ProfileDrop_22">
-        <img src={Avtor} alt={`profile-${user?.firstName}`}  className="imageAtDropDown" />
+    <button className="dashNavBtn" onClick={() => setOpen(true)}>
+      <div className="dashNavProfile">
+        <img src={Avtor} alt={`profile-${user?.firstName}`} className="imageAtDropDown" />
         <AiOutlineCaretDown className="text-sm text-richblack-100" />
       </div>
-      {open && (
-        <div onClick={(e) => e.stopPropagation()}  ref = {ref}  className="DropDownContainer_22" >
-          <Link to="/dashboard" onClick={() => setOpen(false)}>
-            <div className="linkAtDropDown_22">
-              <VscDashboard className="text-lg" />
-              Dashboard
+      {
+        open && (
+          <div onClick={(e) => e.stopPropagation()} ref={ref} className="DropDownContainer_22" >
+            <Link to="/dashboard" onClick={() => setOpen(false)} className="dashNavRightLink">
+              <div className="linkAtDropDown_22">
+                <VscDashboard className="dashNavRightDashImg" />
+                Dashboard
+              </div>
+            </Link>
+            <div onClick={() => { dispatch(logout(navigate)); setOpen(false); }} className="linkAtDropDown_22" >
+              <VscSignOut className="dashNavRightDashImg" />
+              Logout
             </div>
-          </Link>
-          <div onClick = {() => { dispatch(logout(navigate));  setOpen(false); }}  className="linkAtDropDown_22" >
-            <VscSignOut className="text-lg" />
-            Logout
           </div>
-        </div>
-      )}
+        )}
     </button>
-  
 
-)}
+
+  )
+}

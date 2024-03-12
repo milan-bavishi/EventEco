@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../../services/event/registration'
+import "./stylesheets/Addperson.css"
 
 
 function Addperson() {

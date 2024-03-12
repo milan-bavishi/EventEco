@@ -1,4 +1,5 @@
 import React from 'react'
+import "./stylesheets/Addauthorities.css"
 
 function Addauthorities() {
   return (
@@ -7,3 +8,4 @@ function Addauthorities() {
 }
 
 export default Addauthorities
+

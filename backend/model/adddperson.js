@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const registereventSchema = mongoose.Schema({
+const addddpersonSchema = mongoose.Schema({
     
     organizerName: {
         type: String,
@@ -44,4 +44,4 @@ const registereventSchema = mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('registeredEvent', registereventSchema);
+module.exports = mongoose.model('addddpersonSchema', addddpersonSchema);
