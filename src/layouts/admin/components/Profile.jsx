@@ -32,7 +32,7 @@ export default function ProfileDropdown() {
           <div onClick={(e) => e.stopPropagation()} ref={ref} className="DropDownContainer_22" >
             <Link to="/dashboard" onClick={() => setOpen(false)} className="dashNavRightLink">
               <div className="linkAtDropDown_22">
-              Hey,{user.lastName} 
+              Hey,{user.firstName} 
                 <VscDashboard className="dashNavRightDashImg" />
                 Dashboard
               </div>
