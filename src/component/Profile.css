@@ -48,3 +48,7 @@
     color: black; /* Corresponds to text-richblack-25 in Tailwind */
   }
   
+  .text-lg{
+    cursor: pointer;
+  }
+  
