@@ -8,15 +8,15 @@ import Home from "./layouts/Home/Home"
 import Login from "./layouts/auth/login/Login/Login";
 import Signup from "./layouts/auth/signup/Signup";
 import EmailVerify from "./layouts/auth/signup/EmailVerify";
-import Addauthorities from "./layouts/admin/views/Addauthorities";
+import Addauthorities from "./layouts/admin/views/Addauthorities/Addauthorities";
 
 import Admin from "./layouts/admin/index"
 
-import Addperson from "./layouts/admin/views/Addperson"
-import Authoritiesdata from "./layouts/admin/views/Authoritiesdata"
-import Checkindata from "./layouts/admin/views/Checkindata"
+import Addperson from "./layouts/admin/views/Addperson/Addperson"
+import Authoritiesdata from "./layouts/admin/views/Authoritiesdata/Authoritiesdata"
+import Checkindata from "./layouts/admin/views/Checkindata/Checkindata"
 import Registerevent from "./layouts/admin/views/Registerevent/Registerevent"
-import Resgistrationdata from "./layouts/admin/views/Resgistrationdata"
+import Resgistrationdata from "./layouts/admin/views/Resgistrationdata/Resgistrationdata"
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
       <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>}>
         <Route path="/dashboard/registerevent" element={<Registerevent />} />
         <Route path="/dashboard/addperson" element={<Addperson />} />
-        <Route path="/dashboard/resgistrationdata" element={<Resgistrationdata/>} />
+        <Route path="/dashboard/resgistrationdata" element={<Resgistrationdata />} />
         <Route path="/dashboard/checkindata" element={<Checkindata />} />
         <Route path="/dashboard/addauthorities" element={<Addauthorities />} />
         <Route path="/dashboard/authoritiesdata" element={<Authoritiesdata />} />

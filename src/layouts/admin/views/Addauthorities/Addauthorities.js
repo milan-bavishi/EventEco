@@ -1,5 +1,5 @@
 import React from 'react'
-import "./stylesheets/Addauthorities.css"
+import "./Addauthorities.css"
 
 function Addauthorities() {
   return (
