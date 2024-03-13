@@ -72,7 +72,7 @@ export function login(email, password, navigate) {
       console.log(response.data.token);
       console.log("Printing User")
       console.log(response.data.user)
-      response.data.user.role === "user" ? (navigate('/dashboard')) : (navigate('/login'))
+       navigate('/dashboard');
     }
     catch (error) {
       console.log("LOGIN API ERROR............", error)

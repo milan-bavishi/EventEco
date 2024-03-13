@@ -44,7 +44,7 @@ const Signup = () => {
     console.log("Data Sub,itted");
     console.log(formData)
     if (password !== confirmPassword) { toast.error("Passwords do not match"); return; }
-    const signupData = { formData};
+    const signupData = { ...formData };
     dispatch(setSignupData(signupData))                                    // Setting signup data to state To be used after otp verification
     dispatch(sendOtp(formData.email, navigate))                           // Send OTP to user for verification
     setFormData({ firstName: "", lastName: "", email: "", password: "", confirmPassword: "", })           // Reset
@@ -68,7 +68,7 @@ const Signup = () => {
       </div>
       <div className='signRightSection'>
         {
-           (
+          (
             <div className='signTop'>
               <div className='signDetails'>
                 <div className='signStart'>
@@ -79,7 +79,7 @@ const Signup = () => {
                     <h2>Create an account</h2>
                     <h4>Please enter your details.</h4>
                   </div>
-                  
+
                   <div className='signSecondSection'>
                     <form method='POST' onSubmit={handleOnSubmit} action="" className='signForm'>
                       <div className='signInputs'>
@@ -141,7 +141,7 @@ const Signup = () => {
                   Log in
                 </Link>
               </div>
-              
+
             </div>
           )
         }

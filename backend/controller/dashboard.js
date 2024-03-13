@@ -23,6 +23,7 @@ const registerEvent = async (req, res) => {
     lowerCaseAlphabets: false,
   });
 
+
   const registerEvent = await addeventModel.create({
     organizerName,
     eventname ,

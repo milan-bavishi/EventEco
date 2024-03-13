@@ -1,12 +1,27 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import "./Registerevent.css"
-
+import {registerEvent} from "../../../.././services/event/registration"
 
 function Registerevent() {
 
 
+  const dispacth = useDispatch();
 
+  const onSubmit = (e) => {
+    // e.preventDefult();
+    const organizerName = document.getElementById("organizerName").value;
+    const eventname = document.getElementById("eventname").value;
+    const organizerEmail = document.getElementById("organizerEmail").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const categories = document.getElementById("categories").value;
+    const venue = document.getElementById("venue").value;
+    const description = document.getElementById("description").value;
+    console.log(organizerName,eventname,organizerEmail,date,time,categories,venue,description);
+    dispacth(registerEvent(organizerName,eventname,organizerEmail,date,time,categories,venue,description));
+    window.location.replace("/dashboard");
+  }
 
 
 
@@ -21,7 +36,7 @@ function Registerevent() {
           <h1>Enter your event details...</h1>
         </div>
         <div>
-          <form action="" className='regCardForm'>
+          <form action="" onSubmit={onSubmit} className='regCardForm'>
             <div className='regFormfs'>
               <div className='regFormInput'>
                 <label htmlFor="" className='firstres'>Company / Organizer name  </label>
@@ -65,8 +80,8 @@ function Registerevent() {
               <div className='regFormtsss'>
                 <div className='regFormInput'>
                   <label htmlFor="">Categories</label>
-                  <select placeholder='cfce' required id='categories'>
-                    <option value="" disabled selected hidden>Select Categories</option>
+                  <select placeholder='cfce' required id='categories' defaultValue="">
+                    <option value="" disabled>Select Categories</option>
                     <option value="Conference">Conference</option>
                     <option value="Music Event">Music Event</option>
                     <option value=" Sports Event"> Sports Event</option>

@@ -20,7 +20,7 @@ import Resgistrationdata from "./layouts/admin/views/Resgistrationdata"
 
 function App() {
 
-  const { user } = useSelector((state) => state.profile)
+  // const { user } = useSelector((state) => state.profile)
 
   return (
     <Routes>

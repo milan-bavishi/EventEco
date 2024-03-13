@@ -5,7 +5,7 @@ import "./Sidebar.css"
 import logo from "../../../Assets/Images/logo (1).png"
 
 
-function Sidebar({ toggleHandler }) {
+function Sidebar({ toggleHandlerr }) {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -29,7 +29,7 @@ function Sidebar({ toggleHandler }) {
         <div>
           <img src={logo} />
         </div>
-        <button onClick={() => toggleHandler()} className='toggle-btn'>
+        <button onClick={() => toggleHandlerr()} className='toggle-btn'>
           <CloseBtn />
         </button>
       </div>

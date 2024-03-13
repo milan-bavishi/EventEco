@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 
-const dbConnect = async ()=>{
+const dbConnect = async () => {
     console.log("Function Called")
-    try{
+    try {
         mongoose.connect('mongodb+srv://milanbavishi:9ZKlreHtdefscmv8@cluster0.jfks5xm.mongodb.net/?retryWrites=true&w=majority')
-        .then(()=>{
-            console.log('DB Connected')
-        })
-        .catch((err)=>{
-            console.log('DB Does not Connected');
-        })
+            .then(() => {
+                console.log('DB Connected')
+            })
+            .catch((err) => {
+                console.log('DB Does not Connected');
+            }) 
 
-    }catch(errr){
+    } catch (errr) {
         console.log("Can  not connected to DB Some Internal server Err")
     }
 }
