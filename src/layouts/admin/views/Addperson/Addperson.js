@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector } from 'react-redux';
 import { registerUser,findallData } from '../../../../services/event/registration'
 import "./Addperson.css"
 
 function Addperson() {
 
 
+  const {email} = useSelector((state)=>state.profile.user);
+  const [allData, setallData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
-  // const [allData, setallData] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   findallData(setallData, setLoading);
-  // }, []);
+  useEffect(() => {
+    findallData(setallData, setLoading,email);
+  }, []);
   
   return (
     <div className='personWrapper'>
       <div className='personCard'>
         <div className='pCardHeading'>
-          <h1>Enter details...</h1>
+          <h1>Enter details...{allData.email}</h1>
         </div>
         <div className='pCardForm'>
           <div>

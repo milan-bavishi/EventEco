@@ -1,16 +1,8 @@
 const mongoose = require('mongoose');
 
 const addauthoritiesSchema = mongoose.Schema({
-    
-    eventName: {
-        type: String,
-        require: true
-    },
+
     id: {
-        type: String,
-        require: true
-    },
-    password: {
         type: String,
         require: true
     },
@@ -18,9 +10,21 @@ const addauthoritiesSchema = mongoose.Schema({
         type: String,
         require: true
     },
+    password: {
+        type: String,
+        require: true
+    },
     designation: {
         type: String,
         require: true
+    },
+    useremail:{
+        type:String,
+        required:true,
+    },
+    joinedAt: {
+        type: Date,
+        default: Date.now()
     }
 });
 

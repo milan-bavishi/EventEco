@@ -3,6 +3,7 @@ const otpGenerator = require("otp-generator");
 const mailSender = require('../transport/mailsender');
 const otpTemplate = require("../emailBody/verificationOtp");
 const addeventModel = require('../model/AddEvent');
+const addauthModel = require('../model/addAuthorities');
 require("dotenv").config();
 
 //signUp
@@ -64,4 +65,43 @@ const alleventData = async (req, res) => {
     data: dbResponse
   })
 };
-module.exports = { registerEvent, alleventData };
+
+
+
+
+
+const registerAuthorities = async (req, res) => {
+  // const {accountType,  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
+  const { authId,authLocation,authPassword,authDesignation,email } = req.body
+
+  if ( !authId || !authLocation || !authPassword || !authDesignation || !email) {
+    return res.json({
+      success: false,
+      msg: "Fill All the Fields"
+    })
+  }
+
+  // let genratedOtp = otpGenerator.generate(6, {
+  //   upperCaseAlphabets: false,
+  //   specialChars: false,
+  //   lowerCaseAlphabets: false,
+  // });
+
+
+  const registerAuthorities = await addauthModel.create({
+    id: authId,
+    location: authLocation,
+    password: authPassword,
+    designation:authDesignation,
+    useremail:email
+  })
+  console.log(registerAuthorities);
+
+  return res.json({
+    success: true,
+    msg: "auth Registred"
+  })
+};
+
+
+module.exports = { registerEvent, alleventData,registerAuthorities };
