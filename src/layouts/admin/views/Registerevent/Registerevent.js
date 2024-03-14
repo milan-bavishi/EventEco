@@ -1,15 +1,17 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import "./Registerevent.css"
-import {registerEvent} from "../../../.././services/event/registration"
+import { registerEvent } from "../../../.././services/event/registration"
 
 function Registerevent() {
 
 
   const dispacth = useDispatch();
-
+  const navigate = useNavigate();
+  const {email} = useSelector((state)=>state.profile.user);
   const onSubmit = (e) => {
-    // e.preventDefult();
+    e.preventDefault();
     const organizerName = document.getElementById("organizerName").value;
     const eventname = document.getElementById("eventname").value;
     const organizerEmail = document.getElementById("organizerEmail").value;
@@ -18,9 +20,9 @@ function Registerevent() {
     const categories = document.getElementById("categories").value;
     const venue = document.getElementById("venue").value;
     const description = document.getElementById("description").value;
-    console.log(organizerName,eventname,organizerEmail,date,time,categories,venue,description);
-    dispacth(registerEvent(organizerName,eventname,organizerEmail,date,time,categories,venue,description));
-    window.location.replace("/dashboard");
+    console.log(organizerName, eventname, organizerEmail, date, time, categories, venue, description);
+    dispacth(registerEvent(organizerName, eventname, organizerEmail, date, time, categories, venue, description,email, navigate));
+   navigate('/dashboard');
   }
 
 

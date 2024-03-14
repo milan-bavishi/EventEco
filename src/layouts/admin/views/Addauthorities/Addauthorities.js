@@ -1,7 +1,19 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import "./Addauthorities.css"
 
 function Addauthorities() {
+
+    const dispatch = useDispatch();
+
+    const onSubmit = (e) => {
+      e.preventDefault();
+      const authId = document.getElementById("authId");
+      
+    } 
+
+
+
   return (
     <div className='authWrapper'>
       <div className='authCard'>
@@ -19,21 +31,33 @@ function Addauthorities() {
             <div className='authFormfs'>
               <div className='authFormInput'>
                 <label htmlFor="">Id.</label>
-                <input type="text" />
+                <input type="text"
+                required
+                name='authId'
+                id='authId' />
               </div>
               <div className='authFormInput'>
                 <label htmlFor="">location</label>
-                <input type="text" />
+                <input type="text"
+                required
+                name='authLocation'
+                id='authLocation' />
               </div>
             </div>
             <div className='authFormss'>
               <div className='authFormInput'>
                 <label htmlFor="">Password</label>
-                <input type="text" />
+                <input type="text"
+                required
+                name='authPassword'
+                id='authPassword' />
               </div>
               <div className='authFormInput'>
                 <label htmlFor="">Designation</label>
-                <input type="text" />
+                <input type="text"
+                required
+                name='authDesignation'
+                id='authDesignation' />
               </div>
             </div>
             <div className='authFormts'>

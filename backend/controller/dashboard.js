@@ -1,16 +1,16 @@
-
+const jwt = require('jsonwebtoken')
 const otpGenerator = require("otp-generator");
 const mailSender = require('../transport/mailsender');
 const otpTemplate = require("../emailBody/verificationOtp");
-const addeventModel = require("../model/addEvent.js")
+const addeventModel = require('../model/AddEvent');
 require("dotenv").config();
 
 //signUp
 const registerEvent = async (req, res) => {
   // const {accountType,  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
-  const { organizerName,eventname ,organizerEmail,date,time,categories,venue,description } = req.body
+  const { organizerName, eventname, organizerEmail, date, time, categories, venue, description, email } = req.body
 
-  if (!organizerName || !eventname || !organizerEmail || !date || !time || !categories || !venue || !description) {
+  if (!organizerName || !eventname || !organizerEmail || !date || !time || !categories || !email || !venue || !description) {
     return res.json({
       success: false,
       msg: "Fill All the Fields"
@@ -26,14 +26,15 @@ const registerEvent = async (req, res) => {
 
   const registerEvent = await addeventModel.create({
     organizerName,
-    eventname ,
+    eventName: eventname,
     organizerEmail,
     date,
     time,
     categories,
     venue,
     description,
-    id:genratedOtp
+    id: genratedOtp,
+    email
   })
   console.log(registerEvent);
 
@@ -43,42 +44,24 @@ const registerEvent = async (req, res) => {
   })
 };
 
-//sendOTP
-const sendOTP = async (req, res) => {
-  try {
-    let genratedOtp = otpGenerator.generate(6, {
-      upperCaseAlphabets: false,
-      specialChars: false,
-      lowerCaseAlphabets: false,
-    });
 
-    let exist = await otpModel.findOne({ otp: genratedOtp });
-    while (exist) {
-      genratedOtp = otpGenerator.generate(6, {
-        lowerCaseAlphabets: false,
-        upperCaseAlphabets: false,
-        specialChars: false,
-      });
-      let exist = await otpModel.findOne({ otp: genratedOtp });
-    }
-
-    let response = await otpModel.create({
-      otp: genratedOtp,
-      email: req.body.email,
-    });
-
-    let res2 = await mailSender(req.body.email, "Verification Code for Eventeco", otpTemplate(genratedOtp));
-
-    res.json({
-      success: true,
-      msg: "Something Went Wrong",
-    });
-  } catch {
-    res.json({
+const yourEvent = async (req, res) => {
+  const { email } = req.body;
+  if (!email) {
+    return res.json({
       success: false,
-      msg: "Something Went Wrong",
-    });
+      msg: "Fill All the Fields"
+    })
   }
-};
 
-module.exports = { registerEvent };
+  const dbResponse = await addeventModel.find({
+    email: email
+  })
+  console.log(dbResponse);
+
+  return res.json({
+    success: true,
+    data: dbResponse
+  })
+};
+module.exports = { registerEvent, yourEvent };

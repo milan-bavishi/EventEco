@@ -1,17 +1,9 @@
-const jwt = require('jwtwebtoken');
+const jwt = require("jsonwebtoken");
 const userModel = require("../model/userDetails");
 require("dotenv").config();
 
 
-// exports.isLoggedin = (req,res,next)=>{
 
-//     if(!req.cookies.token){
-//         return res.send(401).json( {
-//             success:true,
-//             msg:"Token Not Found"
-//         });
-//     } 
-// }
 
 exports.isLoggedin = async (req, res, next) => {
     try {
