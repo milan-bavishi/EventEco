@@ -10,21 +10,30 @@ function Resgistrationdata() {
   const records = Data.slice(firstIndex, lastIndex);
   const npage = Math.ceil(Data.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
+  const [openFDD, setOpenFDD] = useState(false);
+  const [openSDD, setOpenSDD] = useState(false);
+  const [sortBy, setSortBy] = useState('Add');
 
-  function prevPage() {
+  function setSortByValue(value) {
+    setSortBy(value);
+  }
+
+  function prevPage(event) {
     if (currentPage !== firstIndex) {
       setCurrentPage(currentPage - 1);
+    } else {
+      event.preventDefault();
+      alert('This is First page');
     }
   }
 
-  function nextPage() {
+  function nextPage(event) {
     if (currentPage !== lastIndex) {
       setCurrentPage(currentPage + 1);
+    } else {
+      event.preventDefault();
+      alert('This is Last page');
     }
-  }
-
-  function changeCPage(id) {
-    setCurrentPage(id);
   }
 
   function changeRecords(rpp) {
@@ -42,22 +51,47 @@ function Resgistrationdata() {
             </div>
           </div>
           <div className='regTopNavRightSection'>
+            <div>
             <input type="text" placeholder='Search' className='regTopNavInput' />
-            <button className='regTopNavBtn'>Add +</button>
-            <div>
-              <span>Filters</span>
-              <div className='regTopNavFirstDD'>
-                <button className='regTopNavDDBtn'>Gender</button>
-                <button className='regTopNavDDBtn'>Date</button>
-              </div>
             </div>
+            <button className='regTopNavDDBtn' onClick={() => setOpenFDD(!openFDD)}>
+              <div>
+                {sortBy}
+              </div>
+              {
+                openFDD && (
+                  <div className='regTopNavDD'>
+                    <button className='regTopNavDDItem' onClick={() => setSortByValue('Add')}>
+                      Default
+                    </button>
+                    <button className='regTopNavDDItem' onClick={() => setSortByValue('Gender')}>
+                      Gender
+                    </button>
+                    <button className='regTopNavDDItem' onClick={() => setSortByValue('Date')}>
+                      Date
+                    </button>
+                  </div>
+                )
+              }
+            </button>
             <button className='regTopNavBtn'>Export as CSV</button>
-            <div>
-              <div className='regTopNavSecondDD'>
-                <button className='regTopNavDDBtn' onClick={() => changeRecords(10)}>10</button>
-                <button className='regTopNavDDBtn' onClick={() => changeRecords(15)}>15</button>
+            <button className='regTopNavDDBtn' onClick={() => setOpenSDD(!openSDD)}>
+              <div>
+                {recordsPerPage}
               </div>
-            </div>
+              {
+                openSDD && (
+                  <div className='regTopNavDD'>
+                    <button className='regTopNavDDItem' onClick={() => changeRecords(10)}>
+                      10
+                    </button>
+                    <button className='regTopNavDDItem' onClick={() => changeRecords('15')}>
+                      15
+                    </button>
+                  </div>
+                )
+              }
+            </button>
           </div>
         </nav>
         <section className='regDetailsSection'>
@@ -73,8 +107,35 @@ function Resgistrationdata() {
               <th className='regTableTh'>Designations</th>
               <th className='regTableTh'>Action</th>
             </thead>
+            <tbody>
+              {records.map((d, i) => (
+                <tr key={i} className='regTableTr'>
+                  <td className='regTableTd'>{d.id}</td>
+                  <td className='regTableTd' id='regTableTdName'>{d.name}</td>
+                  <td className='regTableTd' id='regTableTdEmail'>{d.email}</td>
+                  <td className='regTableTd'>{d.phone}</td>
+                  <td className='regTableTd'>{d.gender}</td>
+                  <td className='regTableTd'>{d.regdate}</td>
+                  <td className='regTableTd'>{d.regtime}</td>
+                  <td className='regTableTd'>{d.designation}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </section>
+        <nav className='regBotNav'>
+            <div className='regBotNavLeftSec'>
+                <p>Page <span>{currentPage} / {numbers.length}</span></p>
+            </div>
+            <div className='regBotNavRightSec'>
+                <div className='regBotNavPageItem'>
+                  <a href="#" className='regBotNavPageLink' onClick={prevPage}>Prev</a>
+                </div>
+                <div className='regBotNavPageItem'>
+                  <a href="#" className='regBotNavPageLink' onClick={nextPage}>Next</a>
+                </div>
+            </div>
+        </nav>
       </div>
     </div>
   )

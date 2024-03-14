@@ -27,7 +27,7 @@ const Index = () => {
               </button>
               <ProfileDropdown />
             </div>
-            <Outlet />
+            <Outlet />  
           </div>
         </div>
       </>
