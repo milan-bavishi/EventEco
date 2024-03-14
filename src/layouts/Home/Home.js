@@ -57,7 +57,7 @@ function App() {
         {/* Header */}
         <header>
           {/* NavBar */}
-          <nav>
+          <nav className="homeNav">
             {/* Logo */}
             <div className="event">
               <img src={eventeco} alt="" id="eventechoLogo" />
