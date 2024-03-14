@@ -27,7 +27,6 @@ const Index = () => {
               </button>
               <ProfileDropdown />
             </div>
-            <h1>  </h1>
             <Outlet />
           </div>
         </div>

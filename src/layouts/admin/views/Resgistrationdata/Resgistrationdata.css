@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.regWrapper {
+    height: 80%;
+    overflow-x: visible;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;    
+}
+
