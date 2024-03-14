@@ -46,20 +46,7 @@ function App() {
     //   </Route>
 
 
-
-    // {user?.role === "admin" && (
-    //   <Route path='/admin' element={<PrivateRoute><Admin /></PrivateRoute>}>
-    //     <Route path="/admin/addauthorities" element={<Addauthorities />} />
-    //     <Route path="/admin/addperson" element={<Addperson />} />
-    //     <Route path="/admin/Authoritiesdata" element={<Authoritiesdata />} />
-    //     <Route path="/admin/Checkindata" element={<Checkindata />} />
-    //     <Route path="/admin/Registerevent" element={<Registerevent/>} />
-    //     <Route path="/admin/Resgistrationdata" element={<Resgistrationdata />} />
-    //     <Route path="/admin*" element={<>404 Page Not Found</>} />
-    //   </Route>
-    // )
-    // }
-
+    
     // <Route path="/login" element={<>This is Login</>} />
     // <Route path="*" element={<>404 PAge Not Found</>} />
 

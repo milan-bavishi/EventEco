@@ -15,11 +15,7 @@ const addeventSchema = mongoose.Schema({
         require: true
     },
     date: {
-        type: String,
-        require: true
-    },
-    time: {
-        type: String,
+        type: Date,
         require: true
     },
     categories: {
@@ -37,6 +33,10 @@ const addeventSchema = mongoose.Schema({
     id:{
         type : Number,
         required : true
+    },
+    email:{
+        type:String,
+        required:true,
     },
     joinedAt: {
         type: Date,
