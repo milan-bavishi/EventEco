@@ -45,7 +45,7 @@ const registerEvent = async (req, res) => {
 };
 
 
-const yourEvent = async (req, res) => {
+const alleventData = async (req, res) => {
   const { email } = req.body;
   if (!email) {
     return res.json({
@@ -64,4 +64,4 @@ const yourEvent = async (req, res) => {
     data: dbResponse
   })
 };
-module.exports = { registerEvent, yourEvent };
+module.exports = { registerEvent, alleventData };

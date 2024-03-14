@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 // Import the required controllers and middleware functions
-const { registerEvent, yourEvent } = require("../controller/dashboard")
+const { registerEvent, alleventData } = require("../controller/dashboard")
 const isLoggedin  = require('../middleware/AuthMiddleware')
 // const { resetPasswordToken,  resetPassword,} = require("../controllers/ResetPassword")
 // const { auth } = require("../middlewares/auth")
@@ -15,7 +15,7 @@ const isLoggedin  = require('../middleware/AuthMiddleware')
 //                                      Authentication routes                                             *
 // ********************************************************************************************************
 router.post("/registerevent", registerEvent);
-router.get("/mytournament", yourEvent);                     // Route for Register User
+router.get("/alleventdata", alleventData);                     // Route for Register User
 // router.post("/signup", signUp)                    // Route for user signup
 // router.post("/sendotp", sendOTP)                  // Route for sending OTP to the user's email
 // router.post("/changepassword", auth, changePassword)     // Route for Changing the password

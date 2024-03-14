@@ -39,3 +39,30 @@ export function registerEvent(organizerName, eventname, organizerEmail, date, ti
         toast.dismiss(toastId)
     }
 }
+
+
+export async function findallData(setallData, setLoading,email) {
+    try {
+        setLoading(true);
+        const response = await apiConnector(
+            "GET",
+            "http://localhost:4000/dashboard/alleventData",email
+        );
+
+        if (!response.data.success) {
+            setallData(response);
+            setLoading(false);
+            throw new Error(response.data.msg);
+        }
+
+        if (response.data.success) {
+            setallData(response.data.result);
+        }
+        setLoading(false);
+    } catch (error) {
+        setLoading(false);
+        console.log(error)
+        toast.error("Could not get your event");
+    }
+
+}

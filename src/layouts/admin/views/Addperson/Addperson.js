@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../../../services/event/registration'
+import { registerUser,findallData } from '../../../../services/event/registration'
 import "./Addperson.css"
-function Addperson() {
-  const dispacth = useDispatch();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    console.log(name, email)
-    dispacth(registerUser(name, email));
-    window.location.replace("/dashboard");
-  }
+function Addperson() {
+
+
+
+  // const [allData, setallData] = useState([]);
+  // const [loading, setLoading] = useState(false);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   findallData(setallData, setLoading);
+  // }, []);
+  
   return (
     <div className='personWrapper'>
       <div className='personCard'>
@@ -20,12 +22,12 @@ function Addperson() {
           <h1>Enter details...</h1>
         </div>
         <div className='pCardForm'>
-          {/* <div>
+          <div>
           <div className='pFormInput'>
-              <label htmlFor="">Last Name</label>
+              <label htmlFor=""></label>
               <input type="text" required/>
             </div>
-          </div> */}
+          </div>
           <div className='pFormfs'>
             <div className='pFormInput'>
               <label htmlFor="">First Name</label>
