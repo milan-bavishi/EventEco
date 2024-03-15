@@ -13,19 +13,22 @@ function Addperson() {
 
   useEffect(() => {
     findallData(setallData, setLoading,email);
+    console.log(allData);
   }, []);
   
   return (
     <div className='personWrapper'>
       <div className='personCard'>
         <div className='pCardHeading'>
-          <h1>Enter details...{allData.email}</h1>
+          <h1>Enter details...</h1> 
         </div>
         <div className='pCardForm'>
           <div>
           <div className='pFormInput'>
-              <label htmlFor=""></label>
-              <input type="text" required/>
+          <label htmlFor="">Event Name</label>
+              <select name="" id="">
+                <option value="">   </option>   //drop down data of event .
+              </select>
             </div>
           </div>
           <div className='pFormfs'>
