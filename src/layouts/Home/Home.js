@@ -50,6 +50,7 @@ import photo2 from './icon/photo2.png'
 import photo3 from './icon/photo3.png'
 import qutos from './icon/qutos.png'
 
+
 function App() {
   return (
     <>
@@ -72,7 +73,7 @@ function App() {
                   <a href="#whyus">Why US</a>
                 </li>
                 <li>
-                  <a href="#">Review</a>
+                  <a href="#review">Review</a>
                 </li>
                 <li>
                   <a href="#connectUs">Contact Us</a>
