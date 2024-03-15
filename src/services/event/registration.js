@@ -65,7 +65,7 @@ export function registerAuthorities(authId,authLocation,authPassword,authDesigna
 export async function findallData(setallData, setLoading,email) {
     try {
         setLoading(true);
-        const response = await apiConnector("GET",'https://backend2-2zc1.onrender.com/dashboard/alleventData', { email})
+        const response = await apiConnector("GET",`https://backend2-2zc1.onrender.com/dashboard/alleventData?email=${email}`);
 
         // if (!response.data.success) {
         //     setallData(response);
@@ -74,7 +74,8 @@ export async function findallData(setallData, setLoading,email) {
         // }
 
         if (response.data.success) {
-            setallData(response.data.result);
+            console.log("Data At Service",response.data)
+            setallData(response.data);
         }
         setLoading(false);
     } catch (error) {
@@ -84,3 +85,4 @@ export async function findallData(setallData, setLoading,email) {
     }
 
 }
+

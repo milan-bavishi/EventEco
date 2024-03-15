@@ -47,7 +47,7 @@ const registerEvent = async (req, res) => {
 
 
 const alleventData = async (req, res) => {
-  const { email } = req.body;
+  const { email } = req.query;
   if (!email) {
     return res.json({
       success: false,
