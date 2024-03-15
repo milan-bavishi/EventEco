@@ -25,6 +25,7 @@ function Addperson() {
         <div className='pCardForm'>
           <div>
           <div className='pFormInput'>
+          <label htmlFor="">Event Name</label>
               <select name="" id="">
                 <option value="">   </option>   //drop down data of event .
               </select>
