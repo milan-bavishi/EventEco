@@ -38,6 +38,21 @@ function Resgistrationdata() {
 
   function changeRecords(rpp) {
     setRecordsPerPage(rpp);
+    changeCPage(Math.min(currentPage, Math.ceil((Data.length) / rpp)));
+  }
+
+  function changeCPage (value) {
+    setCurrentPage(value);
+  }
+
+  function handleInputChange (value) {
+    if(value < 1) {
+      value = 1;
+    }
+    if(value > numbers.length) {
+      value = numbers.length;
+    } 
+    setCurrentPage(value);
   }
 
   return (
@@ -131,6 +146,12 @@ function Resgistrationdata() {
                 <div className='regBotNavPageItem'>
                   <a href="#" className='regBotNavPageLink' onClick={prevPage}>Prev</a>
                 </div>
+                <input 
+                  type="number"  
+                  value={currentPage}
+                  onChange={(e) => handleInputChange(Number(e.target.value))}
+                  id='regBotNavInput'  
+                />
                 <div className='regBotNavPageItem'>
                   <a href="#" className='regBotNavPageLink' onClick={nextPage}>Next</a>
                 </div>
