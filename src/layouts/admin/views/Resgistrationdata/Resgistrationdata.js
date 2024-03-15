@@ -19,7 +19,7 @@ function Resgistrationdata() {
   }
 
   function prevPage(event) {
-    if (currentPage !== firstIndex) {
+    if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
     } else {
       event.preventDefault();
@@ -28,7 +28,7 @@ function Resgistrationdata() {
   }
 
   function nextPage(event) {
-    if (currentPage !== lastIndex) {
+    if (currentPage < numbers.length) {
       setCurrentPage(currentPage + 1);
     } else {
       event.preventDefault();
@@ -125,11 +125,11 @@ function Resgistrationdata() {
             <tbody>
               {records.map((d, i) => (
                 <tr key={i} className='regTableTr'>
-                  <td className='regTableTd'>{d.id}</td>
+                  <td className='regTableTd' id='regTableTdId'>{d.id}</td>
                   <td className='regTableTd' id='regTableTdName'>{d.name}</td>
                   <td className='regTableTd' id='regTableTdEmail'>{d.email}</td>
                   <td className='regTableTd'>{d.phone}</td>
-                  <td className='regTableTd'>{d.gender}</td>
+                  <td className='regTableTd' id='regTableTdGender'>{d.gender}</td>
                   <td className='regTableTd'>{d.regdate}</td>
                   <td className='regTableTd'>{d.regtime}</td>
                   <td className='regTableTd'>{d.designation}</td>
