@@ -13,7 +13,6 @@ function Addperson() {
 
   useEffect(() => {
     findallData(setallData, setLoading,email);
-    console.log(allData);
   }, []);
   
   return (
@@ -27,7 +26,15 @@ function Addperson() {
           <div className='pFormInput'>
           <label htmlFor="">Event Name</label>
               <select name="" id="">
-                <option value="">   </option>   //drop down data of event .
+                {
+                  allData.length==0?(<><option value="NA"> No Event Found  </option> </>):(<>
+                  
+                    {
+                      allData.map((val,index)=><option value={`${val.eventName}`}>{val.eventName}</option> )
+                    }
+                  
+                  </>)
+                }  //drop down data of event .
               </select>
             </div>
           </div>

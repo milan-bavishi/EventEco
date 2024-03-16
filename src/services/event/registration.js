@@ -66,14 +66,12 @@ export async function findallData(setallData, setLoading,email) {
         const response = await apiConnector("GET",`http://localhost:4000/dashboard/alleventData?email=${email}`);
 
         if (!response.data.success) {
-            setallData(response);
             setLoading(false);
             throw new Error(response.data.msg);
         }
 
         if (response.data.success) {
-            console.log("Data At Service",response.data)
-            setallData(response.data);
+            setallData(response.data.data);
         }
         setLoading(false);
     } catch (error) {

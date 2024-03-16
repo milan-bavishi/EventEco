@@ -58,7 +58,7 @@ const alleventData = async (req, res) => {
   const dbResponse = await addeventModel.find({
     email: email
   })
-  console.log(dbResponse);
+  // console.log(dbResponse);
 
   return res.json({
     success: true,
