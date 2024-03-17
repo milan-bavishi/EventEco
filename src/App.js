@@ -17,7 +17,7 @@ import Authoritiesdata from "./layouts/admin/views/Authoritiesdata/Authoritiesda
 import Checkindata from "./layouts/admin/views/Checkindata/Checkindata"
 import Registerevent from "./layouts/admin/views/Registerevent/Registerevent"
 import Resgistrationdata from "./layouts/admin/views/Resgistrationdata/Resgistrationdata"
-
+import Checktickets from "./layouts/admin/views/Checkticket/Checktickets";
 function App() {
 
   // const { user } = useSelector((state) => state.profile)
@@ -35,6 +35,7 @@ function App() {
         <Route path="/dashboard/checkindata" element={<Checkindata />} />
         <Route path="/dashboard/addauthorities" element={<Addauthorities />} />
         <Route path="/dashboard/authoritiesdata" element={<Authoritiesdata />} />
+        <Route path="/dashboard/checktickets" element={<Checktickets />} />
       </Route>
     </Routes>
 

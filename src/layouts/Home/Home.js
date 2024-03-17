@@ -4,7 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
-
+import Aos from "aos";
+import  'aos/dist/aos.css'
 import eventlogofooter from "./icon/eventEcofooter.png";
 import eventeco from "./icon/eventeco.png";
 import logo from "./icon/logo-nav-qr.png";
@@ -49,16 +50,23 @@ import photo1 from './icon/photo1.png'
 import photo2 from './icon/photo2.png'
 import photo3 from './icon/photo3.png'
 import qutos from './icon/qutos.png'
+import { useEffect } from "react";
 
 
 function App() {
+
+
+  useEffect( ()=>{
+    Aos.init();
+  },[])
+
   return (
     <>
       <div className="homeWrapper" id="home">
         {/* Header */}
         <header>
           {/* NavBar */}
-          <nav className="homeNav">
+          <nav className="homeNav" data-aos="fade-down">
             {/* Logo */}
             <div className="event">
               <img src={eventeco} alt="" id="eventechoLogo" />
@@ -126,7 +134,7 @@ function App() {
           </section>
 
           {/* Why us */}
-          <section className="whyUs" id="whyus">
+          <section className="whyUs" id="whyus" data-aos="filp-right">
             <div className="dots">
               <img src={whyusEle1} id="dot1" />
               <h1>Why Us</h1>
@@ -355,7 +363,7 @@ function App() {
           {/* Connect US */}
 
           <section className="connectUs" id="connectUs">
-            <div className="title">
+            <div className="title"  data-aos="filp-right">
               <h1>Connect Us</h1>
               <h4>We are here for you! How can we help?</h4>
             </div>

@@ -2,12 +2,12 @@ import { toast } from "react-toastify";
 import { apiConnector } from "../connector";
 import { useDispatch } from "react-redux";
 
-export function registerUser(organizerName, eventname, organizerEmail, date, time, categories, venue, description, navigate) {
+export function registerUser(eventname,firstname,lastname,phonenumber,gender,personemail,designation,email, navigate) {
     return async (dispatch) => {
         const toastId = toast.loading("Loading...")
         console.log("Service Called")
         try {
-            const response = await apiConnector("POST", 'http://localhost:4000/event/registerevent', { organizerName, eventname, organizerEmail, date, time, categories, venue, description, checkUserPresent: true, })
+            const response = await apiConnector("POST", 'http://localhost:4000/dashboard/addperson', {eventname,firstname,lastname,phonenumber,gender,personemail,designation,email, checkUserPresent: true, })
             if (!response.data.success) {
                 throw new Error(response.data.msg)
             }
@@ -82,3 +82,25 @@ export async function findallData(setallData, setLoading,email) {
 
 }
 
+
+
+
+//Check ticket
+export function checkticket(codedata,email, navigate) {
+    return async (dispatch) => {
+        const toastId = toast.loading("Loading...")
+        console.log("Service Called")
+        try {
+            const response = await apiConnector("GET", 'http://localhost:4000/dashboard/checkticket', {codedata,email, checkUserPresent: true, })
+            if (!response.data.success) {
+                throw new Error(response.data.msg)
+            }
+            toast.success("Event Registred")
+        }
+        catch (error) {
+            console.log("Error At Service of ticket check Registration", error)
+            toast.error(error.message);
+        }
+        toast.dismiss(toastId)
+    }
+}

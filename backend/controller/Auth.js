@@ -5,6 +5,8 @@ const otpModel = require("../model/otp");
 const userModel = require('../model/userDetails');
 const mailSender = require('../transport/mailsender');
 const otpTemplate = require("../emailBody/verificationOtp");
+const otppptemplate = require("../emailBody/eventcode")
+const otppppModel = require("../model/otpppp")
 require("dotenv").config();
 
 //signUp
@@ -151,6 +153,34 @@ const sendOTP = async (req, res) => {
   }
 };
 
+//send code for event
+const sendCode = async (req, res) => {
+  try {
+    let genratedOtp = otpGenerator.generate(6, {
+      upperCaseAlphabets: false,
+      specialChars: false,
+      lowerCaseAlphabets: false,
+    });
+
+    let response = await otppppModel.create({
+      otp: genratedOtp,
+      email: req.body.email,
+      eventname: req.body.eventname,
+    });
+
+    let res2 = await mailSender(req.body.email, " Code for Eventeco", otppptemplate(genratedOtp,req.body.eventname));
+
+    res.json({
+      success: true,
+      msg: "Something Went Wrong",
+    });
+  } catch {
+    res.json({
+      success: false,
+      msg: "Something Went Wrong",
+    });
+  }
+};
 // Controller for Changing Password
 const changePassword = async (req, res) => { };
 
@@ -162,4 +192,4 @@ const data = async (req, res) => {
 };
 
 
-module.exports = { signUp, login, sendOTP, changePassword, data };
+module.exports = { signUp, login, sendOTP, changePassword, data,sendCode };

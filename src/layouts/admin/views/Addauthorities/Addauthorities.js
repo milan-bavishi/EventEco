@@ -1,25 +1,18 @@
-import React from 'react'
-import { useDispatch,useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { registerAuthorities } from "../../../.././services/event/registration"
+import React, { useEffect, useState } from "react";
+import { useDispatch , useSelector } from 'react-redux';
+import { registerAuthorities,findallData } from "../../../.././services/event/registration"
 import "./Addauthorities.css"
 
 function Addauthorities() {
 
-  const dispacth = useDispatch();
-  const navigate = useNavigate();
-  const { email } = useSelector((state) => state.profile.user);
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const authId = document.getElementById("authId").value;
-    const authLocation = document.getElementById("authLocation").value;
-    const authPassword = document.getElementById("authPassword").value;
-    const authDesignation = document.getElementById("authDesignation").value;
-    console.log(authId,authLocation,authPassword,authDesignation);
-    dispacth(registerAuthorities(authId,authLocation,authPassword,authDesignation,email, navigate));
-    navigate('/dashboard');
-  }
+  const {email} = useSelector((state)=>state.profile.user);
+  const [allData, setallData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    findallData(setallData, setLoading,email);
+  }, []);
     return (
       <div className='authWrapper'>
         <div className='authCard'>
@@ -27,13 +20,21 @@ function Addauthorities() {
             <h1>Generate</h1>
           </div>
           <div className='authCardForm'>
-            <form action="" onSubmit={onSubmit} className='authForm'>
-              {/* <div>
-              <div className='pFormInput'>
-                <label htmlFor="">Last Name</label>
-                <input type="text" required />
-              </div>
-            </div> */}
+            <form action=""  className='authForm'>
+            <div className='pFormInput'>
+          <label htmlFor="">Event Name</label>
+              <select name="" id="">
+                {
+                  allData.length==0?(<><option value="NA"> No Event Found  </option> </>):(<>
+                  
+                    {
+                      allData.map((val,index)=><option value={`${val.eventName}`}>{val.eventName}</option> )
+                    }
+                  
+                  </>)
+                }  //drop down data of event .
+              </select>
+            </div>
               <div className='authFormfs'>
                 <div className='authFormInput'>
                   <label htmlFor="">Id.</label>

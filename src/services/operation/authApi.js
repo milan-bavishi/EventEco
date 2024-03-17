@@ -10,7 +10,7 @@ export function sendOtp(email, navigate) {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
-      const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/auth/sendotp', { email, checkUserPresent: true, })
+      const response = await apiConnector("POST", 'http://localhost:4000/auth/sendotp', { email, checkUserPresent: true, })
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
@@ -32,7 +32,7 @@ export function signUp(firstName, lastName, email, password, confirmPassword, ot
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
-      const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/auth/signup', { firstName, lastName, email, password, confirmPassword, otp })
+      const response = await apiConnector("POST", 'http://localhost:4000/auth/signup', { firstName, lastName, email, password, confirmPassword, otp })
 
       if (!response.data.success) {
 
@@ -56,7 +56,7 @@ export function login(email, password, navigate) {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
-      const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/auth/login', { email, password, })
+      const response = await apiConnector("POST", 'http://localhost:4000/auth/login', { email, password, })
       console.log("LOGIN API RESPONSE............", response)
 
       if (!response.data.success) {
