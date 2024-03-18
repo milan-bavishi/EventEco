@@ -7,7 +7,7 @@ export function registerUser(eventname,firstname,lastname,phonenumber,gender,per
         const toastId = toast.loading("Loading...")
         console.log("Service Called")
         try {
-            const response = await apiConnector("POST", 'http://localhost:4000/dashboard/addperson', {eventname,firstname,lastname,phonenumber,gender,personemail,designation,email, checkUserPresent: true, })
+            const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/dashboard/addperson', {eventname,firstname,lastname,phonenumber,gender,personemail,designation,email, checkUserPresent: true, })
             if (!response.data.success) {
                 throw new Error(response.data.msg)
             }
@@ -26,7 +26,7 @@ export function registerEvent(organizerName, eventname, organizerEmail, date, ti
         const toastId = toast.loading("Loading...")
         console.log("Service Called")
         try {
-            const response = await apiConnector("POST", 'http://localhost:4000/dashboard/registerevent', { organizerName, eventname, organizerEmail, date, time, categories, venue, description, email, checkUserPresent: true, })
+            const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/dashboard/registerevent', { organizerName, eventname, organizerEmail, date, time, categories, venue, description, email, checkUserPresent: true, })
             if (!response.data.success) {
                 throw new Error(response.data.msg)
             }
@@ -45,7 +45,7 @@ export function registerAuthorities(authId,authLocation,authPassword,authDesigna
         const toastId = toast.loading("Loading...")
         console.log("Service Called")
         try {
-            const response = await apiConnector("POST", 'http://localhost:4000/dashboard/registerauth', { authId,authLocation,authPassword,authDesignation,email, checkUserPresent: true, })
+            const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/dashboard/registerauth', { authId,authLocation,authPassword,authDesignation,email, checkUserPresent: true, })
             if (!response.data.success) {
                 throw new Error(response.data.msg)
             }
@@ -63,7 +63,7 @@ export function registerAuthorities(authId,authLocation,authPassword,authDesigna
 export async function findallData(setallData, setLoading,email) {
     try {
         setLoading(true);
-        const response = await apiConnector("GET",`http://localhost:4000/dashboard/alleventData?email=${email}`);
+        const response = await apiConnector("GET",`https://backend2-2zc1.onrender.com/dashboard/alleventData?email=${email}`);
 
         if (!response.data.success) {
             setLoading(false);
@@ -86,20 +86,21 @@ export async function findallData(setallData, setLoading,email) {
 
 
 //Check ticket
-export function checkticket(codedata,email, navigate) {
+export function checkticket(codedata, navigate) {
     return async (dispatch) => {
         const toastId = toast.loading("Loading...")
         console.log("Service Called")
         try {
-            const response = await apiConnector("GET", 'http://localhost:4000/dashboard/checkticket', {codedata,email, checkUserPresent: true, })
+            const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/dashboard/checkticket', {codedata, checkUserPresent: true, })
             if (!response.data.success) {
                 throw new Error(response.data.msg)
             }
-            toast.success("Event Registred")
+            toast.success("ticket found")
+
         }
         catch (error) {
             console.log("Error At Service of ticket check Registration", error)
-            toast.error(error.message);
+            toast.error("ticket not found");
         }
         toast.dismiss(toastId)
     }

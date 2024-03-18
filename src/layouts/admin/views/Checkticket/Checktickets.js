@@ -13,7 +13,7 @@ function Checktickets() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(checkticket(codedata, email));
+    dispatch(checkticket(codedata));
     navigate('/dashboard');
   }
 

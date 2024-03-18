@@ -18,7 +18,7 @@ router.post("/registerevent", registerEvent);
 router.post("/addperson", addperson);
 router.post("/registerauth", registerAuthorities);
 router.get("/alleventdata", alleventData);
-router.get("/checkticket", checkticket);
+router.post("/checkticket", checkticket);
                     // Route for Register User
 // router.post("/signup", signUp)                    // Route for user signup
 // router.post("/sendotp", sendOTP)                  // Route for sending OTP to the user's email

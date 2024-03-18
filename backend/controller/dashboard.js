@@ -155,7 +155,7 @@ const registerAuthorities = async (req, res) => {
 const checkticket = async (req, res) => {
 
   try {
-    const { codedata,email } = req.body;                  //get data from req body
+    const { codedata} = req.body;                  //get data from req body
 
     if (!codedata) {                             // validate krlo means all inbox are filled or not;
       return res.json({
@@ -167,8 +167,14 @@ const checkticket = async (req, res) => {
     const ticket = await addpersonModel.findOne({ code: codedata });          //user check exist or not
     if (ticket) {
       return res.json({
-        success: false, 
+        success: true, 
         message: "ticket found",
+      });
+    }
+    else{
+      return res.json({
+        success: false, 
+        message: "ticket Not found",
       });
     }
   }
