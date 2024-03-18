@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 // Import the required controllers and middleware functions
-const { registerEvent, alleventData,registerAuthorities,addperson,checkticket } = require("../controller/dashboard")
+const { registerEvent, alleventData,registerAuthorities,addperson,checkticket,addhomeData,addsubmail } = require("../controller/dashboard")
 const isLoggedin  = require('../middleware/AuthMiddleware')
 // const { resetPasswordToken,  resetPassword,} = require("../controllers/ResetPassword")
 // const { auth } = require("../middlewares/auth")
@@ -19,6 +19,8 @@ router.post("/addperson", addperson);
 router.post("/registerauth", registerAuthorities);
 router.get("/alleventdata", alleventData);
 router.post("/checkticket", checkticket);
+router.post("/addhomedata", addhomeData);
+router.post("/addsubmail", addsubmail);
                     // Route for Register User
 // router.post("/signup", signUp)                    // Route for user signup
 // router.post("/sendotp", sendOTP)                  // Route for sending OTP to the user's email

@@ -5,12 +5,12 @@ import "swiper/css";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
 import Aos from "aos";
-import  'aos/dist/aos.css'
+import 'aos/dist/aos.css'
 import eventlogofooter from "./icon/eventEcofooter.png";
 import eventeco from "./icon/eventeco.png";
 import logo from "./icon/logo-nav-qr.png";
 import hero from "./icon/hero-image.svg";
-import image from "./icon/image.png"; 
+import image from "./icon/image.png";
 import image2 from "./icon/image2.png";
 import image3 from "./icon/image3.png";
 import Ellipse1 from "./icon/Ellipse1.svg";
@@ -50,15 +50,41 @@ import photo1 from './icon/photo1.png'
 import photo2 from './icon/photo2.png'
 import photo3 from './icon/photo3.png'
 import qutos from './icon/qutos.png'
-import { useEffect } from "react";
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addhomeData ,addhomeMail} from "../../services/event/registration"
 
 function App() {
 
 
-  useEffect( ()=>{
-    Aos.init();
-  },[])
+  Aos.init({
+    duration: 1200,
+    offset: 250
+  })
+
+
+
+
+  const dispacth = useDispatch();
+  const navigate = useNavigate();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const massage = document.getElementById("massage").value; 
+    console.log(name, email, subject, massage);
+    dispacth(addhomeData(name, email, subject, massage, navigate));
+    navigate('/');
+  }
+  
+  const onSubmit1 = (e) => {
+    e.preventDefault();
+    const subInput = document.getElementById("subInput").value;
+    dispacth(addhomeMail(subInput, navigate));
+    navigate('/');
+  }
 
   return (
     <>
@@ -66,7 +92,7 @@ function App() {
         {/* Header */}
         <header>
           {/* NavBar */}
-          <nav className="homeNav" data-aos="fade-down">
+          <nav className="homeNav">
             {/* Logo */}
             <div className="event">
               <img src={eventeco} alt="" id="eventechoLogo" />
@@ -98,7 +124,7 @@ function App() {
         </header>
         <main>
           {/* Hero Section */}
-          <section className="hero">
+          <section className="hero" >
             <div className="desc">
               <div>
                 <h1>Your Event, Safety Ours!</h1>
@@ -167,16 +193,16 @@ function App() {
           {/* Review */}
 
           <div className="review" id="review">
-          <img src={reviewEllipse1} id="review1" />
-          <img src={reviewEllipse1} id="review2" />
-          <img src={reviewEllipse3} id="review3" />
-          <img src={reviewEllipse4} id="review4" />
+            <img src={reviewEllipse1} id="review1" />
+            <img src={reviewEllipse1} id="review2" />
+            <img src={reviewEllipse3} id="review3" />
+            <img src={reviewEllipse4} id="review4" />
             <h1>Hear From Our Happy Clients</h1>
           </div>
 
           {/* Slider */}
 
-          <section className="homeSlider">
+          <section className="homeSlider" data-aos="fade-down">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={20}
@@ -310,7 +336,7 @@ function App() {
                   <div className='sliderAbout'>
                     <div>
                       <img src={photo2} alt="" />
-                      
+
                     </div>
                     <div className='person'>
                       <p>Jenny Wilson</p>
@@ -362,8 +388,8 @@ function App() {
 
           {/* Connect US */}
 
-          <section className="connectUs" id="connectUs">
-            <div className="title"  data-aos="filp-right">
+          <section className="connectUs" id="connectUs" >
+            <div className="title">
               <h1>Connect Us</h1>
               <h4>We are here for you! How can we help?</h4>
             </div>
@@ -388,56 +414,68 @@ function App() {
                 </div>
               </div>
               {/* <div className="form"> */}
-              <form action=""  className="form">
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Email" />
-                <input type="text" placeholder="Subject" />
+              <form action="" onSubmit={onSubmit} className="form">
+                <input type="text"
+                  placeholder="Name"
+                  required
+                  id="name"
+                />
+                <input type="text"
+                  placeholder="Email"
+                  required
+                  id="email" />
+                <input type="text"
+                  placeholder="Subject"
+                  required
+                  id="subject" />
                 <textarea
                   name=""
-                  id=""
+                  id="massage"
                   cols="30"
                   rows="10"
                   placeholder="Go ahead, We are listening..."
                 ></textarea>
                 <button>submit</button>
-              {/* </div> */}
+                {/* </div> */}
               </form>
             </div>
           </section>
 
           {/* Subscribe */}
-
-          <section className="subscribe">
-            <img src={subscribe} id="subImg" />
-            <div className="content">
-              <h1>Subscribe For More Info</h1>
-              <div className="subInput">
-                <div className="subEmail">
-                  <img src={mailSubscribe} id="mailSub" />
-                  <input
-                    type="text"
-                    id="subInput"
-                    placeholder="Your email here"
-                  />
-                </div>
-                <div className="subBtn">
-                  <button>Subsribe Now</button>
+          <form action="" onSubmit={onSubmit1}>
+            <section className="subscribe">
+              <img src={subscribe} id="subImg" />
+              <div className="content">
+                <h1>Subscribe For More Info</h1>
+                <div className="subInput">
+                  <div className="subEmail">
+                    <img src={mailSubscribe} id="mailSub" />
+                    <input
+                      type="text"
+                      id="subInput"
+                      placeholder="Your email here"
+                      
+                    />
+                  </div>
+                  <div className="subBtn">
+                    <button>Subsribe Now</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </form>
 
           {/* Footer */}
 
           <section className="footer">
-            <img src={rectangle} id="footImg" alt="rectangle"/>
+            <img src={rectangle} id="footImg" alt="rectangle" />
             <div className="footContent">
               <div className="getStarted">
                 <h1>Ready to get started?</h1>
                 <div>
-                <Link to="/login" className="link">
-                  <button>Create Our Event </button>
-                </Link>
+                  <Link to="/login" className="link">
+                    <button>Create Our Event </button>
+                  </Link>
                 </div>
               </div>
               <div className="footSec">

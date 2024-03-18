@@ -4,9 +4,10 @@ const mailSender = require('../transport/mailsender');
 const otpTemplate = require("../emailBody/verificationOtp");
 const addeventModel = require('../model/AddEvent');
 const addauthModel = require('../model/addAuthorities');
-
+const connectusModel = require("../model/connectUs")
 const addpersonModel = require('../model/person');
 const otppptemplate = require("../emailBody/eventcode")
+const addsubmailModel= require("../model/subsribemail")
 require("dotenv").config();
 
 //signUp
@@ -185,7 +186,56 @@ const checkticket = async (req, res) => {
       message: 'checkticket Failure, please try again',
     });
   }
-
-
 };
-module.exports = { registerEvent, alleventData,registerAuthorities,addperson ,checkticket};
+
+
+//addHomedata
+const addhomeData = async (req, res) => {
+  // const {accountType,  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
+  const { name,email,subject,massage } = req.body
+
+if (!name || !email || !subject || !massage) {
+    return res.json({
+      success: false,
+      msg: "Fill All the Fields"
+    })
+  }
+
+  const addhomeData = await connectusModel.create({
+   name,
+   email,
+   subject,
+   massage
+  })
+  console.log(addhomeData);
+
+  return res.json({
+    success: true,
+    msg: "data Registred"
+  })
+};
+
+//addsubmail
+const addsubmail = async (req, res) => {
+  // const {accountType,  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
+  const {subInput } = req.body
+
+if (!subInput) {
+    return res.json({
+      success: false,
+      msg: "Fill All the Fields"
+    })
+  }
+
+  const addsubmail = await addsubmailModel.create({
+    mailid:subInput
+  })
+  console.log(addsubmail);
+
+  return res.json({
+    success: true,
+    msg: "data Registred"
+  })
+};
+
+module.exports = { registerEvent, alleventData,registerAuthorities,addperson ,checkticket,addhomeData,addsubmail};
