@@ -10,14 +10,19 @@ function Resgistrationdata() {
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
   const recordsDisp = records.slice(firstIndex, lastIndex);
-  const npage = Math.ceil(data.length / recordsPerPage);
+  const npage = Math.ceil(records.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
   const [openFDD, setOpenFDD] = useState(false);
   const [openSDD, setOpenSDD] = useState(false);
   const [sortBy, setSortBy] = useState('Add');
 
   function setSortByValue(value) {
-    setSortBy(value);
+    if (value === 'Add') {
+      setRecords(data);
+    } else {
+      setRecords(data.filter(f => f.gender.includes('Male')));
+    }
+    setSortBy(value);  
   }
 
   function prevPage(event) {
