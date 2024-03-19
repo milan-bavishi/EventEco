@@ -5,10 +5,12 @@ import Data from './Data.json';
 function Resgistrationdata() {
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(10);
+  const [data, setData] = useState(Data);
+  const [records, setRecords] = useState(data);
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
-  const records = Data.slice(firstIndex, lastIndex);
-  const npage = Math.ceil(Data.length / recordsPerPage);
+  const recordsDisp = records.slice(firstIndex, lastIndex);
+  const npage = Math.ceil(data.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
   const [openFDD, setOpenFDD] = useState(false);
   const [openSDD, setOpenSDD] = useState(false);
@@ -55,6 +57,10 @@ function Resgistrationdata() {
     setCurrentPage(value);
   }
 
+  const filterName = (event) => {
+    setRecords(data.filter(f => f.name.toLowerCase().includes(event.target.value)))
+  }
+  
   return (
     <div className='regWrapper'>
       <div className='regCard'>
@@ -67,7 +73,7 @@ function Resgistrationdata() {
           </div>
           <div className='regTopNavRightSection'>
             <div>
-            <input type="text" placeholder='Search' className='regTopNavInput' />
+            <input type="text" placeholder='Search' className='regTopNavInput' onChange={filterName}/>
             </div>
             <button className='regTopNavDDBtn' onClick={() => setOpenFDD(!openFDD)}>
               <div>
@@ -109,30 +115,29 @@ function Resgistrationdata() {
             </button>
           </div>
         </nav>
-        <section className='regDetailsSection'>
+        <section classNzame='regDetailsSection'>
           <table className='regTable'>
             <thead>
-              <th className='regTableTh'>Trick Id.</th>
-              <th className='regTableTh'>Name</th>
-              <th className='regTableTh'>Email</th>
-              <th className='regTableTh'>Phone No.</th>
-              <th className='regTableTh'>Gender</th>
-              <th className='regTableTh'>Reg-Date</th>
-              <th className='regTableTh'>Reg-Time</th>
-              <th className='regTableTh'>Designations</th>
-              <th className='regTableTh'>Action</th>
+              <th className='regTableTh' id='regTableTdId'>Trick Id.</th>
+              <th className='regTableTh' id='regTableTdName'>Name</th>
+              <th className='regTableTh' id='regTableTdEmail'>Email</th>
+              <th className='regTableTh' id='regTableTdPhone'>Phone No.</th>
+              <th className='regTableTh' id='regTableTdGender'>Gender</th>
+              <th className='regTableTh' id='regTableTdDate'>Reg-Date</th>
+              <th className='regTableTh' id='regTableTdTime'>Reg-Time</th>
+              <th className='regTableTh' id='regTableTdDes'>Designations</th>
             </thead>
             <tbody>
-              {records.map((d, i) => (
+              {recordsDisp.map((d, i) => (
                 <tr key={i} className='regTableTr'>
                   <td className='regTableTd' id='regTableTdId'>{d.id}</td>
                   <td className='regTableTd' id='regTableTdName'>{d.name}</td>
                   <td className='regTableTd' id='regTableTdEmail'>{d.email}</td>
-                  <td className='regTableTd'>{d.phone}</td>
+                  <td className='regTableTd' id='regTableTdPhone'>{d.phone}</td>
                   <td className='regTableTd' id='regTableTdGender'>{d.gender}</td>
-                  <td className='regTableTd'>{d.regdate}</td>
-                  <td className='regTableTd'>{d.regtime}</td>
-                  <td className='regTableTd'>{d.designation}</td>
+                  <td className='regTableTd' id='regTableTdDate'>{d.regdate}</td>
+                  <td className='regTableTd' id='regTableTdTime'>{d.regtime}</td>
+                  <td className='regTableTd' id='regTableTdDes'>{d.designation}</td>
                 </tr>
               ))}
             </tbody>
