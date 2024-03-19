@@ -56,14 +56,10 @@ import { addhomeData ,addhomeMail} from "../../services/event/registration"
 
 function App() {
 
-
   Aos.init({
     duration: 1200,
     offset: 250
   })
-
-
-
 
   const dispacth = useDispatch();
   const navigate = useNavigate();
