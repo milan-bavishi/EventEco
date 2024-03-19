@@ -130,12 +130,15 @@ const registerAuthorities = async (req, res) => {
     })
   }
 
-  // let genratedOtp = otpGenerator.generate(6, {
-  //   upperCaseAlphabets: false,
-  //   specialChars: false,
-  //   lowerCaseAlphabets: false,
-  // });
 
+  const userPresent = await addauthModel.findOne({ id: authId });
+
+  if (userPresent) {
+    return res.json({
+      success: false,
+      msg: "User Alredy Exist"
+    })
+  }
 
   const registerAuthorities = await addauthModel.create({
     id: authId,
@@ -238,4 +241,34 @@ if (!subInput) {
   })
 };
 
-module.exports = { registerEvent, alleventData,registerAuthorities,addperson ,checkticket,addhomeData,addsubmail};
+
+
+//authorities login
+const authLogin = async (req, res) => {
+  const { id,password } = req.body;
+  console.log(req.body)
+  if (!id || !password) {
+    return res.json({
+      success: false,
+      msg: "Fill All the Fields"
+    })
+  }
+
+
+  const userPresent = await addauthModel.findOne({ id: id , password:password});
+
+  if (userPresent) {
+    return res.json({
+      success: true,
+      msg: "Login succss"
+    })
+} else{
+  return res.json({
+    success: false,
+    msg:"login failuer"
+  })
+} 
+};
+
+
+module.exports = { registerEvent, alleventData,registerAuthorities,addperson ,checkticket,addhomeData,addsubmail,authLogin};
