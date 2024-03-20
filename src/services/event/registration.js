@@ -85,8 +85,8 @@ export async function findallData(setallData, setLoading,email) {
 
 
 
-//Check ticket
-export function checkticket(codedata, navigate) {
+//Check ticketnavigate
+export function checkticket(codedata, ) {
     return async (dispatch) => {
         const toastId = toast.loading("Loading...")
         console.log("Service Called")
@@ -105,6 +105,7 @@ export function checkticket(codedata, navigate) {
         toast.dismiss(toastId)
     }
 }
+
 
 
 //Add Home form data

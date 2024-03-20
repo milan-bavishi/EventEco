@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { checkticket } from '../../../../services/event/registration'
+import { authcheckticket } from '../../../services/operation/authApi'
 
-function Checktickets() {
+function Authtickets() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -12,8 +12,8 @@ function Checktickets() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(checkticket(codedata));
-    navigate('/dashboard/checktickets');
+    dispatch(authcheckticket(codedata,navigate));
+    navigate('/authlogin');
   }
 
   const handleChange = (e) => {
@@ -43,4 +43,4 @@ function Checktickets() {
   )
 }
 
-export default Checktickets;
+export default Authtickets;
