@@ -10,7 +10,7 @@ export function sendOtp(email, navigate) {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
-      const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/auth/sendotp', { email, checkUserPresent: true, })
+      const response = await apiConnector("POST", 'http://localhost:4000/auth/sendotp', { email, checkUserPresent: true, })
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
@@ -32,7 +32,7 @@ export function signUp(firstName, lastName, email, password, confirmPassword, ot
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
-      const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/auth/signup', { firstName, lastName, email, password, confirmPassword, otp })
+      const response = await apiConnector("POST", 'http://localhost:4000/auth/signup', { firstName, lastName, email, password, confirmPassword, otp })
 
       if (!response.data.success) {
 
@@ -56,7 +56,7 @@ export function login(email, password, navigate) {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
-      const response = await apiConnector("POST", 'https://backend2-2zc1.onrender.com/auth/login', { email, password, })
+      const response = await apiConnector("POST", 'http://localhost:4000/auth/login', { email, password, })
       console.log("LOGIN API RESPONSE............", response)
 
       if (!response.data.success) {
@@ -72,7 +72,7 @@ export function login(email, password, navigate) {
       console.log(response.data.token);
       console.log("Printing User")
       console.log(response.data.user)
-       navigate('/dashboard');
+      navigate('/dashboard');
     }
     catch (error) {
       console.log("LOGIN API ERROR............", error)
@@ -82,6 +82,55 @@ export function login(email, password, navigate) {
     toast.dismiss(toastId)
   }
 }
+
+
+//authlogin
+export function authlogin(id, password, navigate) {
+  return async (dispatch) => {
+    const toastId = toast.loading("Loading...")
+    dispatch(setLoading(true))
+    try {
+      const response = await apiConnector("POST", 'http://localhost:4000/auth/authlogin', { id, password, })
+      console.log("LOGIN API RESPONSE............", response)
+
+      if (!response.data.success) {
+        throw new Error(response.data.message)
+      }
+      toast.success("Login Successful")
+      navigate('/authchecktickets');
+    }
+    catch (error) {
+      console.log("LOGIN API ERROR............", error)
+      toast.error(error.message)
+    }
+    dispatch(setLoading(false))
+    toast.dismiss(toastId)
+  }
+}
+
+//athticketcheck
+export function authcheckticket(codedata,navigate) {
+  return async (dispatch) => {
+      const toastId = toast.loading("Loading...")
+      console.log("Service Called")
+      try {
+          const response = await apiConnector("POST", 'http://localhost:4000/auth/authcheckticket', {codedata, checkUserPresent: true, })
+          if (!response.data.success) {
+              throw new Error(response.data.msg)
+              navigate('/authchecktickets');
+          }
+          toast.success("ticket found")
+          navigate('/authchecktickets');
+
+      }
+      catch (error) {
+          console.log("Error At Service of ticket check Registration", error)
+          toast.error("ticket not found");
+      }
+      toast.dismiss(toastId)
+  }
+}
+
 
 export function logout(navigate) {
   return (dispatch) => {

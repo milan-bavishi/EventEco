@@ -93,6 +93,10 @@ const Login = () => {
           <Link to='/signup' className='link'>
             SignUp
           </Link>
+
+          <Link to='/authlogin' className='link'>
+            authlogin
+          </Link>
         </div>
       </div>
     </div>

@@ -5,6 +5,10 @@ const otpModel = require("../model/otp");
 const userModel = require('../model/userDetails');
 const mailSender = require('../transport/mailsender');
 const otpTemplate = require("../emailBody/verificationOtp");
+const otppptemplate = require("../emailBody/eventcode")
+const otppppModel = require("../model/otpppp")
+const authModel = require("../model/addAuthorities")
+const addpersonModel = require("../model/Addperson")
 require("dotenv").config();
 
 //signUp
@@ -151,6 +155,34 @@ const sendOTP = async (req, res) => {
   }
 };
 
+//send code for event
+const sendCode = async (req, res) => {
+  try {
+    let genratedOtp = otpGenerator.generate(6, {
+      upperCaseAlphabets: false,
+      specialChars: false,
+      lowerCaseAlphabets: false,
+    });
+
+    let response = await otppppModel.create({
+      otp: genratedOtp,
+      email: req.body.email,
+      eventname: req.body.eventname,
+    });
+
+    let res2 = await mailSender(req.body.email, " Code for Eventeco", otppptemplate(genratedOtp,req.body.eventname));
+
+    res.json({
+      success: true,
+      msg: "Something Went Wrong",
+    });
+  } catch {
+    res.json({
+      success: false,
+      msg: "Something Went Wrong",
+    });
+  }
+};
 // Controller for Changing Password
 const changePassword = async (req, res) => { };
 
@@ -162,4 +194,84 @@ const data = async (req, res) => {
 };
 
 
-module.exports = { signUp, login, sendOTP, changePassword, data };
+
+//authlogin
+const authlogin = async (req, res) => {
+
+  try {
+    const { id, password } = req.body;                  //get data from req body
+
+    if (!id || !password) {                             // validate krlo means all inbox are filled or not;
+      return res.json({
+        success: false,
+        message: 'Please Fill up All the Required Fields',
+      });
+    }
+    const user = await authModel.findOne({ id});
+    if (!user) {
+      return res.json({
+        success: false,
+        message: "id is not registrered, please signup first",
+      });
+    }
+
+    const user1 = await authModel.findOne({ id,password });          //user check exist or not
+    if (!user1) {
+      return res.json({
+        success: false,
+        message: "password is wrong",
+      });
+    }
+    else{
+      return res.json({
+        success: true,
+        message: "success"
+      })
+    }
+  }
+  catch (error) {
+    console.log(error);
+    return res.json({
+      success: false,
+      message: 'Login Failure, please try again',
+    });
+  }
+};
+
+
+const authcheckticket = async (req, res) => {
+
+  try {
+    const { codedata} = req.body;                  //get data from req body
+
+    if (!codedata) {                             // validate krlo means all inbox are filled or not;
+      return res.json({
+        success: false,
+        message: 'Please Fill up All the Required Fields',
+      });
+    }
+
+    const ticket = await addpersonModel.findOne({ code: codedata });          //user check exist or not
+    if (ticket) {
+      return res.json({
+        success: true, 
+        message: "ticket found",
+      });
+    }
+    else{
+      return res.json({
+        success: false, 
+        message: "ticket Not found",
+      });
+    }
+  }
+  catch (error) {
+    console.log(error);
+    return res.json({
+      success: false,
+      message: 'checkticket Failure, please try again',
+    });
+  }
+};
+
+module.exports = { signUp, login, sendOTP, changePassword, data,sendCode,authlogin ,authcheckticket};
