@@ -14,19 +14,25 @@ function Resgistrationdata() {
   const numbers = [...Array(npage + 1).keys()].slice(1);
   const [openFDD, setOpenFDD] = useState(false);
   const [openSDD, setOpenSDD] = useState(false);
-  const [sortBy, setSortBy] = useState('Add');
+  const [sortBy, setSortBy] = useState('Filter');
+  const [openFFDD, setOpenFFDD] = useState(false);
 
   function setSortByValue(value) {
-    if (value === 'Add') {
+    if (value === 'Filter') {
       setRecords(data);
     } else {
-      setRecords(data.filter(f => f.gender.includes('Male')));
+      let dfilter = data.filter(f => f.gender.includes(value));
+      if (dfilter.length === 0) {
+        alert('No Data Found');
+      } else {
+        setRecords(dfilter);
+      }
     }
-    setSortBy(value);  
+    setSortBy(value);
   }
 
   function prevPage(event) {
-    if (currentPage > 0) {
+    if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     } else {
       event.preventDefault();
@@ -48,24 +54,24 @@ function Resgistrationdata() {
     changeCPage(Math.min(currentPage, Math.ceil((Data.length) / rpp)));
   }
 
-  function changeCPage (value) {
+  function changeCPage(value) {
     setCurrentPage(value);
   }
 
-  function handleInputChange (value) {
-    if(value < 1) {
+  function handleInputChange(value) {
+    if (value < 1) {
       value = 1;
     }
-    if(value > numbers.length) {
+    if (value > numbers.length) {
       value = numbers.length;
-    } 
+    }
     setCurrentPage(value);
   }
 
   const filterName = (event) => {
     setRecords(data.filter(f => f.name.toLowerCase().includes(event.target.value)))
   }
-  
+
   return (
     <div className='regWrapper'>
       <div className='regCard'>
@@ -78,30 +84,44 @@ function Resgistrationdata() {
           </div>
           <div className='regTopNavRightSection'>
             <div>
-            <input type="text" placeholder='Search' className='regTopNavInput' onChange={filterName}/>
+              <input type="text" placeholder='Search' className='regTopNavInput' onChange={filterName} />
             </div>
-            <button className='regTopNavDDBtn' onClick={() => setOpenFDD(!openFDD)}>
+            <button className='regTopNavDDBtn' onMouseEnter={() => setOpenFDD(true)} onMouseLeave={() => setOpenFDD(false)}>
               <div>
                 {sortBy}
               </div>
               {
                 openFDD && (
                   <div className='regTopNavDD'>
-                    <button className='regTopNavDDItem' onClick={() => setSortByValue('Add')}>
-                      Default
+                    <button className='regTopNavDDItem' onClick={() => setSortByValue('Filter')}>
+                      Remove
                     </button>
-                    <button className='regTopNavDDItem' onClick={() => setSortByValue('Gender')}>
-                      Gender
-                    </button>
-                    <button className='regTopNavDDItem' onClick={() => setSortByValue('Date')}>
-                      Date
+                    <button className='regTopNavDDItem' onMouseEnter={() => setOpenFFDD(true)} onMouseLeave={() => setOpenFFDD(false)}>
+                      <div>
+                        Gender
+                      </div>
+                      {
+                        openFFDD && (
+                          <div className="regTopNavCDD">
+                            <button className="regTopNavCDDItem" onClick={() => setSortByValue('Male')}>
+                              Male
+                            </button>
+                            <button className="regTopNavCDDItem" onClick={() => setSortByValue('Female')}>
+                              Female
+                            </button>
+                            <button className="regTopNavCDDItem" onClick={() => setSortByValue('Other')}>
+                              Other
+                            </button>
+                          </div>
+                        )
+                      }
                     </button>
                   </div>
                 )
               }
             </button>
             <button className='regTopNavBtn'>Export as CSV</button>
-            <button className='regTopNavDDBtn' onClick={() => setOpenSDD(!openSDD)}>
+            <button className='regTopNavDDBtn' onMouseEnter={() => setOpenSDD(true)} onMouseLeave={() => setOpenSDD(false)}>
               <div>
                 {recordsPerPage}
               </div>
@@ -149,23 +169,23 @@ function Resgistrationdata() {
           </table>
         </section>
         <nav className='regBotNav'>
-            <div className='regBotNavLeftSec'>
-                <p>Page <span>{currentPage} / {numbers.length}</span></p>
+          <div className='regBotNavLeftSec'>
+            <p>Page <span>{currentPage} / {numbers.length}</span></p>
+          </div>
+          <div className='regBotNavRightSec'>
+            <div className='regBotNavPageItem'>
+              <a href="#" className='regBotNavPageLink' onClick={prevPage}>Prev</a>
             </div>
-            <div className='regBotNavRightSec'>
-                <div className='regBotNavPageItem'>
-                  <a href="#" className='regBotNavPageLink' onClick={prevPage}>Prev</a>
-                </div>
-                <input 
-                  type="number"  
-                  value={currentPage}
-                  onChange={(e) => handleInputChange(Number(e.target.value))}
-                  id='regBotNavInput'  
-                />
-                <div className='regBotNavPageItem'>
-                  <a href="#" className='regBotNavPageLink' onClick={nextPage}>Next</a>
-                </div>
+            <input
+              type="number"
+              value={currentPage}
+              onChange={(e) => handleInputChange(Number(e.target.value))}
+              id='regBotNavInput'
+            />
+            <div className='regBotNavPageItem'>
+              <a href="#" className='regBotNavPageLink' onClick={nextPage}>Next</a>
             </div>
+          </div>
         </nav>
       </div>
     </div>
