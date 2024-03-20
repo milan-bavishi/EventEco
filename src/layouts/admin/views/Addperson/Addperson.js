@@ -30,7 +30,14 @@ function Addperson() {
     const designation = document.getElementById("designation").value;
     console.log(eventname, firstname, lastname, phonenumber, gender, personemail, designation, email);
     dispatch(registerUser(eventname, firstname, lastname, phonenumber, gender, personemail, designation, email));
-    navigate('/dashboard');
+    navigate('/dashboard/Addperson');
+    document.getElementById("eventname").value = 'NA';
+    document.getElementById("firstname").value = '';
+    document.getElementById("lastname").value = '';
+    document.getElementById("phonenumber").value = '';
+    document.getElementById("personemail").value = '';
+    document.getElementById("designation").value = '';
+
   }
 
   return (

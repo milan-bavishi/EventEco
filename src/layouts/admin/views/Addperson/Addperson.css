@@ -66,6 +66,20 @@
   gap: 20px;
 }
 
+#eventname {
+  display: flex;
+  height: 44px;
+  padding: 10px 14px;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid var(--stork-style, #c9c9c9);
+  background: var(--White, #fff);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
 .pFormfs {
   display: flex;
   gap: 30px;

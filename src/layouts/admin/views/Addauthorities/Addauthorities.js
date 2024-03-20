@@ -23,7 +23,7 @@ function Addauthorities() {
             <form action=""  className='authForm'>
             <div className='pFormInput'>
           <label htmlFor="">Event Name</label>
-              <select name="" id="">
+              <select name="" id="eventName">
                 {
                   allData.length==0?(<><option value="NA"> No Event Found  </option> </>):(<>
                   
