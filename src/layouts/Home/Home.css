@@ -11,7 +11,6 @@ import "@fontsource/poppins/400.css"; // Specify weight  */
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
 button {
   cursor: pointer;
 }
