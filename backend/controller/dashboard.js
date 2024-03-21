@@ -92,8 +92,26 @@ const regallData = async (req, res) => {
   })
 };
 
+//all authdata
+const authallData = async (req, res) => {
+  const { email } = req.query;
+  if (!email) {
+    return res.json({
+      success: false,
+      msg: "Fill All the Fields"
+    })
+  }
 
+  const dbResponse = await addauthModel.find({
+    email: email
+  })
+  // console.log(dbResponse);
 
+  return res.json({
+    success: true,
+    data: dbResponse
+  })
+};
 
 
 //Add person
@@ -298,4 +316,4 @@ const authLogin = async (req, res) => {
 };
 
 
-module.exports = { registerEvent, alleventData,registerAuthorities,addperson ,checkticket,addhomeData,addsubmail,authLogin,regallData};
+module.exports = { registerEvent, alleventData,registerAuthorities,addperson ,checkticket,addhomeData,addsubmail,authLogin,authallData,regallData};
