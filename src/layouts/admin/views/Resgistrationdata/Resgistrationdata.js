@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Data from './Data.json';
-import { registerUser, resallData } from '../../../../services/event/registration'
+import { resallData } from '../../../../services/event/registration'
 
 function Resgistrationdata() {
 
@@ -17,20 +17,22 @@ function Resgistrationdata() {
 
 
 
-
-
-
-
-
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(10);
   const [data, setData] = useState(Data);
   const [records, setRecords] = useState(data);
+
+
+
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
   const recordsDisp = records.slice(firstIndex, lastIndex);
   const npage = Math.ceil(records.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
+
+
+
+  
   const [openFDD, setOpenFDD] = useState(false);
   const [openSDD, setOpenSDD] = useState(false);
   const [sortBy, setSortBy] = useState('Filter');
