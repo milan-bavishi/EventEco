@@ -24,19 +24,12 @@ export default function ProfileDropdown() {
   return (
     <button className="dashNavBtn" onClick={() => setOpen(true)}>
       <div className="dashNavProfile">
-        <img src={Avtor} alt={`profile-${user?.firstName}`} className="imageAtDropDown" />
+        Hey,{user.firstName}
         <AiOutlineCaretDown className="text-sm text-richblack-100" />
       </div>
       {
         open && (
           <div onClick={(e) => e.stopPropagation()} ref={ref} className="DropDownContainer_22" >
-            <Link to="/dashboard" onClick={() => setOpen(false)} className="dashNavRightLink">
-              <div className="linkAtDropDown_22">
-              Hey,{user.firstName} 
-                <VscDashboard className="dashNavRightDashImg" />
-                Dashboard
-              </div>
-            </Link>
             <div onClick={() => { dispatch(logout(navigate)); setOpen(false); }} className="linkAtDropDown_22" >
               <VscSignOut className="dashNavRightDashImg" />
               Logout

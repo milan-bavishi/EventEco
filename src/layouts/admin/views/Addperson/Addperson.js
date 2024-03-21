@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { registerUser, findallData } from '../../../../services/event/registration'
+import { registerUser, findallData } from '../../../../services/event/registration';
 import "./Addperson.css"
 
 function Addperson() {
@@ -37,7 +37,6 @@ function Addperson() {
     document.getElementById("phonenumber").value = '';
     document.getElementById("personemail").value = '';
     document.getElementById("designation").value = '';
-
   }
 
   return (
@@ -54,11 +53,9 @@ function Addperson() {
                 <select name="" id="eventname">
                   {
                     allData.length == 0 ? (<><option value="NA"> No Event Found  </option> </>) : (<>
-
                       {
                         allData.map((val, index) => <option value={`${val.eventName}`}>{val.eventName}</option>)
                       }
-
                     </>)
                   }  //drop down data of event .
                 </select>
