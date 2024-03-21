@@ -16,6 +16,19 @@ import photo2 from "./images/photo2.jpg"
 import photo3 from "./images/photo3.jpg"
 import photo4 from "./images/photo4.jpg"
 import photo5 from "./images/photo5.jpg"
+import photo6 from "./images/photo6.jpg"
+import photo7 from "./images/photo7.jpg"
+import photo8 from "./images/photo8.avif"
+import photo9 from "./images/photo9.avif"
+import photo10 from "./images/photo10.jpg"
+import photo11 from "./images/photo11.jpg"
+import photo12 from "./images/photo12.jpg"
+import photo13 from "./images/photo13.jpg"
+import photo14 from "./images/photo14.jpg"
+import photo15 from "./images/photo15.jpg"
+import photo16 from "./images/photo16.jpg"
+import photo17 from "./images/photo17.jpg"
+import photo19 from "./images/photo19.png"
 
 
 const Login = () => {
@@ -49,6 +62,19 @@ const Login = () => {
           <SwiperSlide><img src={photo3} alt="" /></SwiperSlide>
           <SwiperSlide><img src={photo4} alt="" /></SwiperSlide>
           <SwiperSlide><img src={photo5} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo6} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo7} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo8} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo9} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo10} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo11} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo12} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo13} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo14} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo15} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo16} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo17} alt="" /></SwiperSlide>
+          .<SwiperSlide><img src={photo19} alt="" /></SwiperSlide>
         </Swiper>
       </div>
       <div className='logDetails'>
@@ -103,8 +129,4 @@ const Login = () => {
   )
 }
 
-export default Login
-
-
-
-
+export default Login  

@@ -13,7 +13,7 @@ function Authtickets() {
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(authcheckticket(codedata,navigate));
-    navigate('/authlogin');
+    navigate('/authchecktickets');
   }
 
   const handleChange = (e) => {

@@ -70,6 +70,32 @@ const alleventData = async (req, res) => {
   })
 };
 
+
+//find res all data
+const regallData = async (req, res) => {
+  const { email } = req.query;
+  if (!email) {
+    return res.json({
+      success: false,
+      msg: "Fill All the Fields"
+    })
+  }
+
+  const dbResponse = await addpersonModel.find({
+    email: email
+  })
+  // console.log(dbResponse);
+
+  return res.json({
+    success: true,
+    data: dbResponse
+  })
+};
+
+
+
+
+
 //Add person
 const addperson = async (req, res) => {
   // const {accountType,  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
@@ -121,9 +147,9 @@ const addperson = async (req, res) => {
 
 const registerAuthorities = async (req, res) => {
   // const {accountType,  firstName, lastName, email, password, confirmPassword,  otp} = req.body;
-  const { authId,authLocation,authPassword,authDesignation,email } = req.body
+  const { eventName,authId,authLocation,authPassword,authDesignation,email } = req.body
 
-  if ( !authId || !authLocation || !authPassword || !authDesignation || !email) {
+  if (!eventName ||  !authId || !authLocation || !authPassword || !authDesignation || !email) {
     return res.json({
       success: false,
       msg: "Fill All the Fields"
@@ -136,11 +162,12 @@ const registerAuthorities = async (req, res) => {
   if (userPresent) {
     return res.json({
       success: false,
-      msg: "User Alredy Exist"
+      msg: "Userid is already taken"
     })
   }
 
   const registerAuthorities = await addauthModel.create({
+    eventname: eventName,
     id: authId,
     location: authLocation,
     password: authPassword,
@@ -271,4 +298,4 @@ const authLogin = async (req, res) => {
 };
 
 
-module.exports = { registerEvent, alleventData,registerAuthorities,addperson ,checkticket,addhomeData,addsubmail,authLogin};
+module.exports = { registerEvent, alleventData,registerAuthorities,addperson ,checkticket,addhomeData,addsubmail,authLogin,regallData};

@@ -11,7 +11,7 @@ export function registerUser(eventname,firstname,lastname,phonenumber,gender,per
             if (!response.data.success) {
                 throw new Error(response.data.msg)
             }
-            toast.success("Event Registred")
+            toast.success("User Registred in event and ticket send to user mail")
         }
         catch (error) {
             console.log("Error At Service of User Registration", error)
@@ -40,12 +40,12 @@ export function registerEvent(organizerName, eventname, organizerEmail, date, ti
     }
 }
 
-export function registerAuthorities(authId,authLocation,authPassword,authDesignation, email, navigate) {
+export function registerAuthorities(eventName,authId,authLocation,authPassword,authDesignation, email, navigate) {
     return async (dispatch) => {
         const toastId = toast.loading("Loading...")
         console.log("Service Called")
         try {
-            const response = await apiConnector("POST", 'http://localhost:4000/dashboard/registerauth', { authId,authLocation,authPassword,authDesignation,email, checkUserPresent: true, })
+            const response = await apiConnector("POST", 'http://localhost:4000/dashboard/registerauth', {eventName, authId,authLocation,authPassword,authDesignation,email, checkUserPresent: true, })
             if (!response.data.success) {
                 throw new Error(response.data.msg)
             }
@@ -83,6 +83,28 @@ export async function findallData(setallData, setLoading,email) {
 }
 
 
+//find resisitesion data
+export async function resallData(setallData, setLoading,email) {
+    try {
+        setLoading(true);
+        const response = await apiConnector("GET",`http://localhost:4000/dashboard/resalldata?email=${email}`);
+
+        if (!response.data.success) {
+            setLoading(false);
+            throw new Error(response.data.msg);
+        }
+
+        if (response.data.success) {
+            setallData(response.data.data);
+        }
+        setLoading(false);
+    } catch (error) {
+        setLoading(false);
+        console.log(error)
+        toast.error("Could not get your event");
+    }
+
+}
 
 
 //Check ticketnavigate
@@ -118,7 +140,7 @@ export function addhomeData(name,email,subject,massage, navigate) {
             if (!response.data.success) {
                 throw new Error(response.data.msg)
             }
-            toast.success("data Registred")
+            toast.success("Massage Registred")
         }
         catch (error) {
             console.log("Error At Service of data Registration", error)
@@ -139,7 +161,7 @@ export function addhomeMail(subInput, navigate) {
             if (!response.data.success) {
                 throw new Error(response.data.msg)
             }
-            toast.success("Event Registred")
+            toast.success("Mail Subsribed")
         }
         catch (error) {
             console.log("Error At Service of User Registration", error)

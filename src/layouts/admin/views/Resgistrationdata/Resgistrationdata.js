@@ -1,8 +1,27 @@
-import React, { useState } from 'react'
 import "./Resgistrationdata.css"
+import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Data from './Data.json';
+import { registerUser, resallData } from '../../../../services/event/registration'
 
 function Resgistrationdata() {
+
+  const [loading, setLoading] = useState(false);
+  const [allData, setallData] = useState([]);
+  const { email } = useSelector((state) => state.profile.user);
+
+  useEffect(() => {
+    resallData(setallData, setLoading, email);
+  }, []);
+
+
+
+
+
+
+
+
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(10);
   const [data, setData] = useState(Data);

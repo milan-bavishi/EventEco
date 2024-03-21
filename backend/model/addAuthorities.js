@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const addauthoritiesSchema = mongoose.Schema({
 
+    eventname: {
+        type: String,
+        require: true
+    },
     id: {
         type: String,
         require: true

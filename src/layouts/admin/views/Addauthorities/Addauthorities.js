@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { useDispatch , useSelector } from 'react-redux';
 import { registerAuthorities,findallData } from "../../../.././services/event/registration"
 import "./Addauthorities.css"
@@ -9,10 +10,38 @@ function Addauthorities() {
   const [allData, setallData] = useState([]);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     findallData(setallData, setLoading,email);
   }, []);
+
+
+  // After dispatching the action, clear the input values
+const onSubmit = (e) => {
+  e.preventDefault();
+  const eventname = document.getElementById("eventName").value;
+  const authId = document.getElementById("authId").value;
+  const authLocation = document.getElementById("authLocation").value;
+  const authPassword = document.getElementById("authPassword").value;
+  const authDesignation = document.getElementById("authDesignation").value;
+  
+  console.log(eventname, authId, authLocation, authPassword, authDesignation, email);
+  
+  dispatch(registerAuthorities(eventname, authId, authLocation, authPassword, authDesignation, email));
+  navigate('/dashboard/addauthorities');
+  
+  // Clear input values after submission
+  document.getElementById("eventName").value = 'NA';
+  document.getElementById("authId").value = '';
+  document.getElementById("authLocation").value = '';
+  document.getElementById("authPassword").value = '';
+  document.getElementById("authDesignation").value = '';
+}
+
+
+
+
     return (
       <div className='authWrapper'>
         <div className='authCard'>
@@ -20,7 +49,7 @@ function Addauthorities() {
             <h1>Generate</h1>
           </div>
           <div className='authCardForm'>
-            <form action=""  className='authForm'>
+            <form action=""  className='authForm' onSubmit={onSubmit}>
             <div className='pFormInput'>
           <label htmlFor="">Event Name</label>
               <select name="" id="eventName">
