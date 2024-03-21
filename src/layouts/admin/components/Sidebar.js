@@ -14,7 +14,6 @@ function Sidebar({ toggleHandlerr }) {
     { text: 'Register Event', path: '/dashboard/registerevent' },
     { text: 'Add Person', path: '/dashboard/addperson' },
     { text: 'Resgistration Data', path: '/dashboard/resgistrationdata' },
-    { text: 'Check-in data', path: '/dashboard/checkindata' },
     { text: 'Add Authorities', path: '/dashboard/addauthorities' },
     { text: 'Authorities data', path: '/dashboard/Authoritiesdata' },
     { text: 'check ticket', path: '/dashboard/checktickets' },

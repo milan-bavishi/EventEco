@@ -18,6 +18,8 @@ import Checkindata from "./layouts/admin/views/Checkindata/Checkindata"
 import Registerevent from "./layouts/admin/views/Registerevent/Registerevent"
 import Resgistrationdata from "./layouts/admin/views/Resgistrationdata/Resgistrationdata"
 import Checktickets from "./layouts/admin/views/Checkticket/Checktickets";
+import Authchecktickets from "./layouts/auth/authlogin/Authtickets"
+
 function App() {
   
   // const { user } = useSelector((state) => state.profile)
@@ -27,9 +29,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/verify-email" element={<EmailVerify />} />
+      <Route path="/verify-email" element={<Authchecktickets />} />
       <Route path="/authlogin" element={<Authlogin />} />
-      <Route path="/authchecktickets" element={<Checktickets />} />
+      <Route path="/authchecktickets" element={<Authchecktickets />} />
       <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>}>
         <Route path="/dashboard/registerevent" element={<Registerevent />} />
         <Route path="/dashboard/addperson" element={<Addperson />} />

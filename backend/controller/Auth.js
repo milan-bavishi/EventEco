@@ -8,7 +8,7 @@ const otpTemplate = require("../emailBody/verificationOtp");
 const otppptemplate = require("../emailBody/eventcode")
 const otppppModel = require("../model/otpppp")
 const authModel = require("../model/addAuthorities")
-const addpersonModel = require("../model/Addperson")
+const addpersonModel = require("../model/person")
 require("dotenv").config();
 
 //signUp
