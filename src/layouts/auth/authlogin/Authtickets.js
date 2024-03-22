@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { authcheckticket } from '../../../services/operation/authApi'
+import './Authtickets.css'
 
 function Authtickets() {
 
@@ -22,9 +23,10 @@ function Authtickets() {
 
   return (
     <>
-        <div>
-            <form onSubmit={onSubmit}>
-                <div>
+        <div className="authCheckWrapper">
+          <div className="authCheckCard">
+          <form onSubmit={onSubmit} className="authCheckForm">
+                <div className="authCheckFS">
                     <label htmlFor="codedata">Enter Code:</label>
                     <input 
                       type="text"
@@ -34,10 +36,11 @@ function Authtickets() {
                       required
                     />
                 </div>
-                <div>
-                  <button type="submit">Submit</button>
+                <div className="authCheckSS">
+                  <button type="submit" className="authCheckBtn">Submit</button>
                 </div>
             </form>
+          </div>      
         </div>
     </>
   )
