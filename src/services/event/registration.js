@@ -84,7 +84,7 @@ export async function findallData(setallData, setLoading,email) {
 
 
 //find resisitesion data
-export async function resallData(setallData, setLoading,email) {
+export async function resallData(setallData, setLoading,setData, setRecords,email) {
     try {
         setLoading(true);
         const response = await apiConnector("GET",`http://localhost:4000/dashboard/resalldata?email=${email}`);
@@ -95,7 +95,10 @@ export async function resallData(setallData, setLoading,email) {
         }
 
         if (response.data.success) {
+            console.log(response.data.data)
             setallData(response.data.data);
+            setData(response.data.data); 
+            setRecords(response.data.data);
         }
         setLoading(false);
     } catch (error) {
