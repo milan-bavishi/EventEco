@@ -58,6 +58,7 @@
   border: 1px solid var(--stork-style, #c9c9c9);
   background: var(--White, #fff);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  transition: all 200ms linear;
 }
 
 .pCardForm {
@@ -78,6 +79,7 @@
   border: 1px solid var(--stork-style, #c9c9c9);
   background: var(--White, #fff);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  transition: all 300ms linear;
 }
 
 .pFormfs {
@@ -138,4 +140,13 @@
   line-height: normal;
   letter-spacing: 0.2px;
   cursor: pointer;
+  transition: all 200ms linear;
+}
+
+/* Hover */
+
+.pFormInput input:hover, 
+.pFormBtn button:hover,
+#eventname:hover {
+  transform: scale(1.05);
 }

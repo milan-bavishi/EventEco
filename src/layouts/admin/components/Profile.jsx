@@ -22,7 +22,7 @@ export default function ProfileDropdown() {
 
 
   return (
-    <button className="dashNavBtn" onClick={() => setOpen(true)}>
+    <button className="dashNavBtn" onClick={() => setOpen(!open)}>
       <div className="dashNavProfile">
         Hey,{user.firstName}
         <AiOutlineCaretDown className="text-sm text-richblack-100" />

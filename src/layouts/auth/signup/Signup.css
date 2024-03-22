@@ -110,6 +110,10 @@
   gap: 20px;
 }
 
+.signSecondSection .signForm .signInputs input {
+  transition: all 200ms linear;
+}
+
 .signSecondSection .signForm .signInputs .inputName {
   display: flex;
   align-items: center;
@@ -131,6 +135,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  transition: all 200ms linear;
 }
 .signSecondSection .signForm .signInputs .inputOthers {
   display: flex;
@@ -148,4 +153,20 @@
 .signTop .signAcc .link {
   font-weight: 700;
   font-size: 1.1rem;
+  transition: all 200ms linear;
+  color: black;
+}
+
+/* Hover */
+
+.signSecondSection .signForm .signInputs input:hover {
+  transform: scale(1.05);
+}
+
+.signSecondSection .signForm .signBtn button:hover {
+  transform: scale(1.05);
+}
+
+.signTop .signAcc .link:hover {
+  transform: scale(1.1);
 }

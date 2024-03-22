@@ -52,13 +52,13 @@ import photo3 from './icon/photo3.png'
 import qutos from './icon/qutos.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addhomeData ,addhomeMail} from "../../services/event/registration"
+import { addhomeData, addhomeMail } from "../../services/event/registration"
 
 function App() {
 
   Aos.init({
     duration: 1200,
-    offset: 250
+    offset: 100
   })
 
   const dispacth = useDispatch();
@@ -69,17 +69,23 @@ function App() {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const subject = document.getElementById("subject").value;
-    const massage = document.getElementById("massage").value; 
+    const massage = document.getElementById("massage").value;
     console.log(name, email, subject, massage);
     dispacth(addhomeData(name, email, subject, massage, navigate));
     navigate('/');
+    document.getElementById("name").value = '';
+    document.getElementById("email").value = '';
+    document.getElementById("subject").value = '';
+    document.getElementById("massage").value = '';
   }
-  
+
   const onSubmit1 = (e) => {
     e.preventDefault();
     const subInput = document.getElementById("subInput").value;
     dispacth(addhomeMail(subInput, navigate));
     navigate('/');
+    document.getElementById("subInput").value = '';
+
   }
 
   return (
@@ -88,12 +94,12 @@ function App() {
         {/* Header */}
         <header>
           {/* NavBar */}
-          <nav className="homeNav">
+          <nav className="homeNav" data-aos='slide-down'>
             {/* Logo */}
             <div className="event">
               <img src={eventeco} alt="" id="eventechoLogo" />
             </div>
-            {/* Componen */}
+            {/* Component */}
             <div className="components">
               <ul>
                 <li>
@@ -108,7 +114,7 @@ function App() {
                 <li>
                   <a href="#connectUs">Contact Us</a>
                 </li>
-          
+
               </ul>
             </div>
             {/* Button */}
@@ -121,8 +127,8 @@ function App() {
         </header>
         <main>
           {/* Hero Section */}
-          <section className="hero" >
-            <div className="desc">
+          <section className="hero">
+            <div className="desc" data-aos='zoom-in'>
               <div>
                 <h1>Your Event, Safety Ours!</h1>
                 <h2>Safe Event No Stress</h2>
@@ -136,8 +142,8 @@ function App() {
             </div>
             <div className="content">
               <div>
-                <h1>Everything An Event Needs</h1>
-                <p>
+                <h1 data-aos='slide-right'>Everything An Event Needs</h1>
+                <p data-aos='slide-left'>
                   Watch your visions of the perfect event come to life with
                   EvenTor. From meticulous planning to foolproof execution – we
                   will ensure your event gets everything it needs with top
@@ -151,7 +157,7 @@ function App() {
             <img src={image} id="image" />
             <img src={image2} id="image2" />
             <img src={image3} id="image3" />
-            <img src={hero} id="hero" />
+            <img src={hero} id="hero" data-aos='zoom-in' />
             <img src={yellowVector} id="yellowVector" />
             <img src={Vector} id="vector" />
           </section>
@@ -160,10 +166,10 @@ function App() {
           <section className="whyUs" id="whyus" data-aos="filp-right">
             <div className="dots">
               <img src={whyusEle1} id="dot1" />
-              <h1>Why Us</h1>
+              <h1 data-aos='zoom-out'>Why Us</h1>
               <img src={whyusEle2} id="dot2" />
             </div>
-            <div className="cards">
+            <div className="cards" data-aos='zoom-in'>
               <img src={Vector1} id="vector1" />
               <img src={Vector2} id="vector2" />
 
@@ -194,7 +200,7 @@ function App() {
             <img src={reviewEllipse1} id="review2" />
             <img src={reviewEllipse3} id="review3" />
             <img src={reviewEllipse4} id="review4" />
-            <h1>Hear From Our Happy Clients</h1>
+            <h1 data-aos='fade-up'>Hear From Our Happy Clients</h1>
           </div>
 
           {/* Slider */}
@@ -387,22 +393,22 @@ function App() {
 
           <section className="connectUs" id="connectUs" >
             <div className="title">
-              <h1>Connect Us</h1>
-              <h4>We are here for you! How can we help?</h4>
+              <h1 data-aos='flip-up'>Connect Us</h1>
+              <h4 data-aos='flip-down'>We are here for you! How can we help?</h4>
             </div>
             <div className="details">
-              <div className="location">
+              <div className="location" data-aos='slide-right'>
                 <div>
                   <img src={graphic} alt="" />
                 </div>
                 <div className="loc">
                   <div className="flex">
                     <img src={location} alt="" />
-                    <p>Sahjanad Hostel</p>
+                    <p>Surat</p>
                   </div>
                   <div className="flex">
                     <img src={number} alt="" />
-                    <p>+91 99999xxxxx</p>
+                    <p>+91 9099129982</p>
                   </div>
                   <div className="flex">
                     <img src={connectMail} alt="" />
@@ -410,48 +416,48 @@ function App() {
                   </div>
                 </div>
               </div>
-              {/* <div className="form"> */}
-              <form action="" onSubmit={onSubmit} className="form">
-                <input type="text"
-                  placeholder="Name"
-                  required
-                  id="name"
-                />
-                <input type="text"
-                  placeholder="Email"
-                  required
-                  id="email" />
-                <input type="text"
-                  placeholder="Subject"
-                  required
-                  id="subject" />
-                <textarea
-                  name=""
-                  id="massage"
-                  cols="30"
-                  rows="10"
-                  placeholder="Go ahead, We are listening..."
-                ></textarea>
-                <button>submit</button>
-                {/* </div> */}
-              </form>
+              <div data-aos='slide-left'>
+                <form action="" onSubmit={onSubmit} className="form">
+                  <input type="text"
+                    placeholder="Name"
+                    required
+                    id="name"
+                  />
+                  <input type="text"
+                    placeholder="Email"
+                    required
+                    id="email" />
+                  <input type="text"
+                    placeholder="Subject"
+                    required
+                    id="subject" />
+                  <textarea
+                    name=""
+                    id="massage"
+                    cols="30"
+                    rows="10"
+                    placeholder="Go ahead, We are listening..."
+                  ></textarea>
+                  <button>submit</button>
+                </form>
+              </div>
             </div>
           </section>
 
           {/* Subscribe */}
           <form action="" onSubmit={onSubmit1}>
             <section className="subscribe">
-              <img src={subscribe} id="subImg" />
+              <img src={subscribe} id="subImg" data-aos='zoom-out' />
               <div className="content">
-                <h1>Subscribe For More Info</h1>
-                <div className="subInput">
+                <h1 data-aos='fade-down'>Subscribe For More Info</h1>
+                <div className="subInput" data-aos='fade-up'>
                   <div className="subEmail">
                     <img src={mailSubscribe} id="mailSub" />
                     <input
                       type="text"
                       id="subInput"
                       placeholder="Your email here"
-                      
+
                     />
                   </div>
                   <div className="subBtn">
@@ -468,19 +474,19 @@ function App() {
             <img src={rectangle} id="footImg" alt="rectangle" />
             <div className="footContent">
               <div className="getStarted">
-                <h1>Ready to get started?</h1>
+                <h1 data-aos='zoom-in'>Ready to get started?</h1>
                 <div>
-                  <Link to="/login" className="link">
+                  <Link to="/login" className="link" data-aos='zoom-in'>
                     <button>Create Our Event </button>
                   </Link>
                 </div>
               </div>
               <div className="footSec">
                 <div className="leftSec">
-                  <img src={eventlogofooter} id="eventFooter" height={75} />
+                  <img src={eventlogofooter} id="eventFooter" height={75} data-aos='zoom-out' />
                 </div>
                 <div className="rightSec">
-                  <div className="footNav">
+                  <div className="footNav" data-aos='slide-right'>
                     <p>
                       <a href="#home">Home</a>
                     </p>
@@ -494,14 +500,14 @@ function App() {
                       <a href="#connectUs">Contact Us </a>
                     </p>
                   </div>
-                  <div className="footLoc">
+                  <div className="footLoc" data-aos='slide-left'>
                     <div className="locFlex">
                       <img src={footerLocation} alt="" />
-                      <p>Sahjanad Hostel</p>
+                      <p>Surat</p>
                     </div>
                     <div className="locFlex">
                       <img src={footerNumber} alt="" />
-                      <p>+91987654321</p>
+                      <p>+91 9099129982</p>
                     </div>
                     <div className="locFlex">
                       <img src={footerMail} alt="" />

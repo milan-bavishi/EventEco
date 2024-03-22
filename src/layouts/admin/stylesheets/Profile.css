@@ -8,12 +8,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.2rem;
 }
 
 .DropDownContainer_22 {
   position: absolute;
   top: 135%;
-  right: -36%;
   z-index: 1000;
   border-top-width: 1px;
   border-bottom-width: 1px;

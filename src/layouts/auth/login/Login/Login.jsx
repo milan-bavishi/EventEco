@@ -57,8 +57,6 @@ const Login = () => {
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           loop={true}
           className='logSwiper'>
-          <SwiperSlide><img src={photo1} alt="" /></SwiperSlide>
-          <SwiperSlide><img src={photo2} alt="" /></SwiperSlide>
           <SwiperSlide><img src={photo3} alt="" /></SwiperSlide>
           <SwiperSlide><img src={photo4} alt="" /></SwiperSlide>
           <SwiperSlide><img src={photo5} alt="" /></SwiperSlide>
@@ -74,7 +72,7 @@ const Login = () => {
           <SwiperSlide><img src={photo15} alt="" /></SwiperSlide>
           <SwiperSlide><img src={photo16} alt="" /></SwiperSlide>
           <SwiperSlide><img src={photo17} alt="" /></SwiperSlide>
-          .<SwiperSlide><img src={photo19} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={photo19} alt="" /></SwiperSlide>
         </Swiper>
       </div>
       <div className='logDetails'>
@@ -90,27 +88,33 @@ const Login = () => {
             <div className='formSection'>
               <form onSubmit={handleOnSubmit} className='logForm'>
                 <div className='formInput'>
-                <input type="email"
-                  required
-                  placeholder='Email'
-                  name='email'
-                  value={email}
-                  onChange={handleOnChange}
-                />
-                <input type="password"
-                  required
-                  placeholder='Enter Your Password Here'
-                  name='password'
-                  value={password}
-                  onChange={handleOnChange}
-                />
+                  <input type="email"
+                    required
+                    placeholder='Email'
+                    name='email'
+                    value={email}
+                    onChange={handleOnChange}
+                  />
+                  <input type="password"
+                    required
+                    placeholder='Enter Your Password Here'
+                    name='password'
+                    value={password}
+                    onChange={handleOnChange}
+                  />
                 </div>
                 <div className='logBtn'>
                   <button type="submit">
                     Login
                   </button>
                 </div>
+                <div className='authLoginLink'>
+                  <Link to='/authlogin' className='link'>
+                    For Authorities Login 
+                  </Link>
+                </div>
               </form>
+
             </div>
           </div>
         </div>
@@ -118,10 +122,6 @@ const Login = () => {
           <p>Don't have an account?</p>
           <Link to='/signup' className='link'>
             SignUp
-          </Link>
-
-          <Link to='/authlogin' className='link'>
-            authlogin
           </Link>
         </div>
       </div>

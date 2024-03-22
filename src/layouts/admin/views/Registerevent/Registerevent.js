@@ -25,12 +25,6 @@ function Registerevent() {
    navigate('/dashboard');
   }
 
-
-
-
-
-
-
   return (
     <div className='registerWrapper'>
       <div className='registerCard'>

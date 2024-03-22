@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 * {
   margin: 0;
@@ -103,6 +103,10 @@
   gap: 20px;
 }
 
+.logDetails .loginDetails .formSection .logForm .formInput input {
+  transition: all 200ms linear;
+}
+
 .formSection {
   display: flex;
   width: 520px;
@@ -140,6 +144,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  transition: all 200ms linear;
 }
 
 .logDetails .account {
@@ -155,4 +160,39 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  transition: all 200ms linear;
+}
+
+.authLoginLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.authLoginLink .link {
+  color: #15063f;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: all 200ms linear;
+}
+
+/* Hover */
+
+.logDetails .loginDetails .formSection .logForm .formInput input:hover {
+  transform: scale(1.05);
+}
+
+.logDetails .account .link:hover {
+  transform: scale(1.1);
+}
+
+.authLoginLink .link:hover {
+  transform: scale(1.1);
+} 
+
+.formSection .logForm .logBtn button:hover {
+  transform: scale(1.05);
 }
