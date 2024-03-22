@@ -10,17 +10,18 @@ function Resgistrationdata() {
   const [loading, setLoading] = useState(false);
   const [allData, setallData] = useState([]);
   const { email } = useSelector((state) => state.profile.user);
+  const [data, setData] = useState(Data);
+  const [records, setRecords] = useState(data);
 
   useEffect(() => {
-    resallData(setallData, setLoading, email);
+    resallData(setallData, setData, setRecords,setLoading, email);
   }, []);
 
 
 
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(10);
-  const [data, setData] = useState(Data);
-  const [records, setRecords] = useState(data);
+
 
 
 
@@ -177,14 +178,14 @@ function Resgistrationdata() {
             <tbody>
               {recordsDisp.map((d, i) => (
                 <tr key={i} className='regTableTr'>
-                  <td className='regTableTd' id='regTableTdId'>{d.id}</td>
-                  <td className='regTableTd' id='regTableTdName'>{d.name}</td>
-                  <td className='regTableTd' id='regTableTdName'>{d.name}</td>
+                  <td className='regTableTd' id='regTableTdId'>{d._id}</td>
+                  <td className='regTableTd' id='regTableTdName'>{d.firstname}</td>
+                  <td className='regTableTd' id='regTableTdName'>{d.lastname}</td>
                   <td className='regTableTd' id='regTableTdEmail'>{d.email}</td>
-                  <td className='regTableTd' id='regTableTdPhone'>{d.phone}</td>
+                  <td className='regTableTd' id='regTableTdPhone'>{d.phonenumber}</td>
                   <td className='regTableTd' id='regTableTdGender'>{d.gender}</td>
-                  <td className='regTableTd' id='regTableTdDate'>{d.regdate}</td>
-                  <td className='regTableTd' id='regTableTdTime'>{d.regtime}</td>
+                  <td className='regTableTd' id='regTableTdDate'>{ d.joinedAt}</td>
+                  <td className='regTableTd' id='regTableTdTime'>{d.joinedAt}</td>
                   <td className='regTableTd' id='regTableTdDes'>{d.designation}</td>
                 </tr>
               ))}
