@@ -54,6 +54,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addhomeData, addhomeMail } from "../../services/event/registration"
 
+import desai from "./icon/review/desai.jpg"
+import amiras from "./icon/review/amiras.jpg"
+import bhargav from "./icon/review/bhargav.jpg"
+import nishant from "./icon/review/nishant.jpg"
+import yash from "./icon/review/yash.jpg"
+import ishwar from "./icon/review/ishwar.jpg"
+
 function App() {
 
   Aos.init({
@@ -221,15 +228,14 @@ function App() {
                     <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
-                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                    <p>"Amazing platform! Made our event a breeze with its simplicity and security. Attendees loved the QR code tickets. Highly recommend!"</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src={photo1} alt="" />
+                      <img src={desai} alt=""  id="reviewphoto"/>
                     </div>
                     <div className='person'>
-                      <p>Jenny Wilson</p>
-                      <span>Trust Administrator</span>
+                      <p>Hetvi Desai</p>
                     </div>
                   </div>
                 </div>
@@ -240,14 +246,13 @@ function App() {
                     <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
-                    <p>"Great session! Dani was super helpful. She shared some practical advice on how can lorem ip we go about refining our service offerings."</p>                  </div>
+                    <p>"Absolutely impressed with EventEco! It was the backbone of our conference, allowing us to manage everything seamlessly. Will definitely use again!"</p>                  </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src={photo2} alt="" />
+                      <img src={nishant} id="reviewphoto"  alt="" />
                     </div>
                     <div className='person'>
-                      <p>Jenny Wilson</p>
-                      <span>Trust Administrator</span>
+                      <p>Nishant Kathrotiya</p>
                     </div>
                   </div>
                 </div>
@@ -258,15 +263,14 @@ function App() {
                     <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
-                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                    <p>"The customization options on EventEco were a game-changer for our music festival. It gave us the flexibility we needed to make our event truly unique."</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src={photo3} alt="" />
+                      <img src={yash} id="reviewphoto" alt="" />
                     </div>
                     <div className='person'>
-                      <p>Jenny Wilson</p>
-                      <span>Trust Administrator</span>
+                      <p>Yash Parmar</p>
                     </div>
                   </div>
                 </div>
@@ -277,15 +281,14 @@ function App() {
                     <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
-                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                    <p>"As a wedding planner, I rely on EventEco for all my events. It's a lifesaver with its intuitive interface and robust features."</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src={photo1} alt="" />
+                      <img src={bhargav} id="reviewphoto" alt="" />
                     </div>
                     <div className='person'>
-                      <p>Jenny Wilson</p>
-                      <span>Trust Administrator</span>
+                      <p>Bharrav Dungrani</p>
                     </div>
                   </div>
                 </div>
@@ -296,15 +299,14 @@ function App() {
                     <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
-                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                    <p>"Efficient, intuitive, and the customer support team at EventEco is top-notch. They were there every step of the way"</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src={photo2} alt="" />
+                      <img src={amiras} alt="" id="reviewphoto"/>
                     </div>
                     <div className='person'>
-                      <p>Jenny Wilson</p>
-                      <span>Trust Administrator</span>
+                      <p>Amiras Mandaliya</p>
                     </div>
                   </div>
                 </div>
@@ -315,73 +317,14 @@ function App() {
                     <img src={qutos} alt="" />
                   </div>
                   <div className='sliContent'>
-                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
+                    <p>"Best event management system out there! EventEco made our charity fundraiser a huge success. Couldn't have asked for better support"</p>
                   </div>
                   <div className='sliderAbout'>
                     <div>
-                      <img src={photo1} alt="" />
+                      <img src={ishwar} id="reviewphoto" alt="" />
                     </div>
                     <div className='person'>
-                      <p>Jenny Wilson</p>
-                      <span>Trust Administrator</span>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='sliderMain'>
-                  <div>
-                    <img src={qutos} alt="" />
-                  </div>
-                  <div className='sliContent'>
-                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
-                  </div>
-                  <div className='sliderAbout'>
-                    <div>
-                      <img src={photo2} alt="" />
-
-                    </div>
-                    <div className='person'>
-                      <p>Jenny Wilson</p>
-                      <span>Trust Administrator</span>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='sliderMain'>
-                  <div>
-                    <img src={qutos} alt="" />
-                  </div>
-                  <div className='sliContent'>
-                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
-                  </div>
-                  <div className='sliderAbout'>
-                    <div>
-                      <img src={photo3} alt="" />
-                    </div>
-                    <div className='person'>
-                      <p>Jenny Wilson</p>
-                      <span>Trust Administrator</span>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='sliderMain'>
-                  <div>
-                    <img src={qutos} alt="" />
-                  </div>
-                  <div className='sliContent'>
-                    <p>"I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. "</p>
-                  </div>
-                  <div className='sliderAbout'>
-                    <div>
-                      <img src={photo1} alt="" />
-                    </div>
-                    <div className='person'>
-                      <p>Jenny Wilson</p>
-                      <span>Trust Administrator</span>
+                      <p>Ishwar Goswami</p>
                     </div>
                   </div>
                 </div>
