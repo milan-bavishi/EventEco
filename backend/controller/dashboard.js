@@ -153,7 +153,7 @@ const addperson = async (req, res) => {
     email
   })
   console.log(addperson);
-  let res2 = await mailSender(req.body.personemail,`Code for ${eventname}`, otppptemplate(genratedOtp,req.body.eventname));
+  let res2 = await mailSender(req.body.personemail,`Code for ${eventname}`, otppptemplate(genratedOtp,req.body.eventname,req.body.firstname,req.body.lastname));
   return res.json({
     success: true,
     msg: "Person Registred"
