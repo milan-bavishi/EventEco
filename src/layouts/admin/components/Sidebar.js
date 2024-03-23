@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import CloseBtn from './CloseBtn';
 import "./Sidebar.css"
 import logo from "../../../Assets/Images/logo (1).png"
 
@@ -10,7 +9,7 @@ function Sidebar({ toggleHandlerr }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const linkItems = [
-  
+
     { text: 'Register Event', path: '/dashboard/registerevent' },
     { text: 'Add Person', path: '/dashboard/addperson' },
     { text: 'Resgistration Data', path: '/dashboard/resgistrationdata' },
@@ -25,12 +24,7 @@ function Sidebar({ toggleHandlerr }) {
   return (
     <div className="dashSideContainer">
       <div className='dashSideLogo'>
-        <div>
-          <img src={logo} />
-        </div>
-        <button onClick={() => toggleHandlerr()} className='toggle-btn'>
-          <CloseBtn />
-        </button>
+        <img src={logo} />
       </div>
       <hr className='hrline' />
       <ul className="link-items">

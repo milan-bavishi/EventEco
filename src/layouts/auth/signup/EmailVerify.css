@@ -52,6 +52,10 @@
     aspect-ratio: 1/1 !important;
 }
 
+.separateSpan {
+    margin: 0 5px;
+}
+
 .verifyButton {
     width: 100%;
     padding: 0 35px;
@@ -62,17 +66,25 @@
     gap: 30px;
 }
 
-.verifyButton .verifyBtn {
-    border: 1px solid rgb(255, 255, 255);
-    padding: 5px 17px;
-    border-radius: 5px;
-    width: 100%;
-    background-color: #7522e6;
-    color: white;
-    padding: 5px;
+.emailVerifyBtn button {
+    display: flex;
+    padding: 10px 35px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+    border-radius: 6px;
+    background: #0a142f;
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.2px;
     cursor: pointer;
-    margin-bottom: 10px;
-}
+    transition: all 200ms linear;
+  }
 
 .backToSignUp {
     width: 100%;
@@ -88,10 +100,22 @@
     padding: 5px 50px;
     border: none;
     background: none;
-    font-size: 14px;
+    font-size: 18px;
+    color: black;
     font-weight: 600;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 200ms linear;
+}
+
+/* Hover */
+
+.emailVerifyBtn button:hover {
+    transform: scale(1.05);
+}
+
+.backToSignUp .back:hover {
+    transform: scale(1.1);
 }

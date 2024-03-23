@@ -43,13 +43,15 @@ const EmailVerify = () => {
             value={otp}
             onChange={setOtp}
             numInputs={6}
-            renderSeparator={<span>-</span>}
+            renderSeparator={<span className='separateSpan'></span>}
             renderInput={(props) => <input {...props} className='inputAtOTP_22' />}
           />
           <div className='verifyButton'>
-            <button type="submit" className='verifyBtn'>
-              Verify Email
-            </button>
+            <div className='emailVerifyBtn'>
+              <button type="submit" className='verifyBtn'>
+                Verify Email
+              </button>
+            </div>
             <div className='backToSignUp'>
               <Link to="/signup" className='back'>
                 Back To Signup
