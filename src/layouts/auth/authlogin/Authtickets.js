@@ -8,12 +8,12 @@ function Authtickets() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   const [codedata, setCodedata] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(authcheckticket(codedata,navigate));
+    dispatch(authcheckticket(codedata, navigate));
     navigate('/authchecktickets');
   }
 
@@ -23,25 +23,28 @@ function Authtickets() {
 
   return (
     <>
-        <div className="authCheckWrapper">
-          <div className="authCheckCard">
+      <div className="authCheckWrapper">
+        <div className="authCheckCard">
           <form onSubmit={onSubmit} className="authCheckForm">
-                <div className="authCheckFS">
-                    <label htmlFor="codedata">Enter Code:</label>
-                    <input 
-                      type="text"
-                      id="codedata"
-                      value={codedata}
-                      onChange={handleChange}
-                      required
-                    />
-                </div>
-                <div className="authCheckSS">
-                  <button type="submit" className="authCheckBtn">Submit</button>
-                </div>
-            </form>
-          </div>      
+            <div className="authCheckHeading">
+              <h1>Enter Ticket ID :-</h1>
+            </div>
+            <div className="authCheckFS">
+              <input
+                type="text"
+                id="codedata"
+                value={codedata}
+                onChange={handleChange}
+                placeholder="Ticket ID"
+                required
+              />
+            </div>
+            <div className="authCheckSS">
+              <button type="submit" className="authCheckBtn">Submit</button>
+            </div>
+          </form>
         </div>
+      </div>
     </>
   )
 }
