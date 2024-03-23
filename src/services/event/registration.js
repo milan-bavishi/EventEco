@@ -110,6 +110,32 @@ export async function resallData(setallData, setLoading,setData, setRecords,emai
 }
 
 
+//authalldata
+export async function authallData(setallData, setLoading,setData, setRecords,email) {
+    try {
+        setLoading(true);
+        const response = await apiConnector("GET",`http://localhost:4000/dashboard/authalldata?email=${email}`);
+
+        if (!response.data.success) {
+            setLoading(false);
+            throw new Error(response.data.msg);
+        }
+
+        if (response.data.success) {
+            console.log(response.data.data)
+            setallData(response.data.data);
+            setData(response.data.data); 
+            setRecords(response.data.data);
+        }
+        setLoading(false);
+    } catch (error) {
+        setLoading(false);
+        console.log(error)
+        toast.error("Could not get Auth data");
+    }
+
+}
+
 //Check ticketnavigate
 export function checkticket(codedata, ) {
     return async (dispatch) => {

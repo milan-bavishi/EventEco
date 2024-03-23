@@ -16,7 +16,7 @@ function Sidebar({ toggleHandlerr }) {
     { text: 'Resgistration Data', path: '/dashboard/resgistrationdata' },
     { text: 'Add Authorities', path: '/dashboard/addauthorities' },
     { text: 'Authorities data', path: '/dashboard/Authoritiesdata' },
-    { text: 'check ticket', path: '/dashboard/checktickets' },
+    { text: 'Check ticket', path: '/dashboard/checktickets' },
   ];
   const handleLinkItemClick = (index) => {
     setSelectedIndex(index);

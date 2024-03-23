@@ -437,7 +437,7 @@ function App() {
                       <a href="#whyus">Why Us</a>
                     </p>
                     <p>
-                      <a href="">Review</a>
+                      <a href="#review">Review</a>
                     </p>
                     <p>
                       <a href="#connectUs">Contact Us </a>

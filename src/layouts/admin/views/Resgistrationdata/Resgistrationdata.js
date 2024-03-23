@@ -166,25 +166,25 @@ function Resgistrationdata() {
           <table className='regTable'>
             <thead>
               <th className='regTableTh' id='regTableTdId'>Trick Id.</th>
+              <th className='regTableTh' id='regTableTdName'>Event Nam</th>
               <th className='regTableTh' id='regTableTdName'>Firstname</th>
               <th className='regTableTh' id='regTableTdName'>lastname</th>
               <th className='regTableTh' id='regTableTdEmail'>Email</th>
               <th className='regTableTh' id='regTableTdPhone'>Phone No.</th>
               <th className='regTableTh' id='regTableTdGender'>Gender</th>
               <th className='regTableTh' id='regTableTdDate'>Reg-Date</th>
-              <th className='regTableTh' id='regTableTdTime'>Reg-Time</th>
               <th className='regTableTh' id='regTableTdDes'>Designations</th>
             </thead>
             <tbody>
               {recordsDisp.map((d, i) => (
                 <tr key={i} className='regTableTr'>
-                  <td className='regTableTd' id='regTableTdId'>{d._id}</td>
+                  <td className='regTableTd' id='regTableTdId'>{d.code}</td>
+                  <td className='regTableTd' id='regTableTdName'>{d.eventname}</td>
                   <td className='regTableTd' id='regTableTdName'>{d.firstname}</td>
                   <td className='regTableTd' id='regTableTdName'>{d.lastname}</td>
-                  <td className='regTableTd' id='regTableTdEmail'>{d.email}</td>
+                  <td className='regTableTd' id='regTableTdEmail'>{d.personemail}</td>
                   <td className='regTableTd' id='regTableTdPhone'>{d.phonenumber}</td>
                   <td className='regTableTd' id='regTableTdGender'>{d.gender}</td>
-                  <td className='regTableTd' id='regTableTdDate'>{ d.joinedAt}</td>
                   <td className='regTableTd' id='regTableTdTime'>{d.joinedAt}</td>
                   <td className='regTableTd' id='regTableTdDes'>{d.designation}</td>
                 </tr>

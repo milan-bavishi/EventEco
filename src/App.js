@@ -29,7 +29,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/verify-email" element={<Authchecktickets />} />
+      <Route path="/verify-email" element={<EmailVerify />} />
       <Route path="/authlogin" element={<Authlogin />} />
       <Route path="/authchecktickets" element={<Authchecktickets />} />
       <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>}>

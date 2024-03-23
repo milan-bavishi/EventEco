@@ -97,7 +97,7 @@ const Login = () => {
                   />
                   <input type="password"
                     required
-                    placeholder='Enter Your Password Here'
+                    placeholder='Password'
                     name='password'
                     value={password}
                     onChange={handleOnChange}

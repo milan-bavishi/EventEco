@@ -1,17 +1,39 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import "./Authoritiesdata.css"
 import Data from './Data.json';
+import { authallData } from '../../../../services/event/registration'
 
 function Authoritiesdata() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [recordsPerPage, setRecordsPerPage] = useState(10);
+
+  const [loading, setLoading] = useState(false);
+  const [allData, setallData] = useState([]);
+  const { email } = useSelector((state) => state.profile.user);
   const [data, setData] = useState(Data);
   const [records, setRecords] = useState(data);
+
+  useEffect(() => {
+    authallData(setallData, setData, setRecords,setLoading, email);
+  }, []);
+
+
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recordsPerPage, setRecordsPerPage] = useState(10);
+
+
+
+
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
   const recordsDisp = records.slice(firstIndex, lastIndex);
   const npage = Math.ceil(records.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
+
+
+
+
   const [openFDD, setOpenFDD] = useState(false);
   const [openSDD, setOpenSDD] = useState(false);
   const [sortBy, setSortBy] = useState('Filter');
@@ -143,26 +165,20 @@ function Authoritiesdata() {
         <section classNzame='authDetailsSection'>
           <table className='authTable'>
             <thead>
-              <th className='authTableTh' id='authTableTdId'>Trick Id.</th>
-              <th className='authTableTh' id='authTableTdName'>Name</th>
-              <th className='authTableTh' id='authTableTdEmail'>Email</th>
-              <th className='authTableTh' id='authTableTdPhone'>Phone No.</th>
-              <th className='authTableTh' id='authTableTdGender'>Gender</th>
-              <th className='authTableTh' id='authTableTdDate'>Reg-Date</th>
-              <th className='authTableTh' id='authTableTdTime'>Reg-Time</th>
-              <th className='authTableTh' id='authTableTdDes'>Designations</th>
+              <th className='authTableTh' id='authTableTdId'>Eventname</th>
+              <th className='authTableTh' id='authTableTdName'>Location</th>
+              <th className='authTableTh' id='authTableTdEmail'>ID</th>
+              <th className='authTableTh' id='authTableTdPhone'>Password No.</th>
+              <th className='authTableTh' id='authTableTdPhone'>Designation</th>
             </thead>
             <tbody>
               {recordsDisp.map((d, i) => (
                 <tr key={i} className='authTableTr'>
-                  <td className='authTableTd' id='authTableTdId'>{d.id}</td>
-                  <td className='authTableTd' id='authTableTdName'>{d.name}</td>
-                  <td className='authTableTd' id='authTableTdEmail'>{d.email}</td>
-                  <td className='authTableTd' id='authTableTdPhone'>{d.phone}</td>
-                  <td className='authTableTd' id='authTableTdGender'>{d.gender}</td>
-                  <td className='authTableTd' id='authTableTdDate'>{d.regdate}</td>
-                  <td className='authTableTd' id='authTableTdTime'>{d.regtime}</td>
-                  <td className='authTableTd' id='authTableTdDes'>{d.designation}</td>
+                  <td className='authTableTd' id='authTableTdId'>{d.eventname}</td>
+                  <td className='authTableTd' id='authTableTdName'>{d.location}</td>
+                  <td className='authTableTd' id='authTableTdName'>{d.id}</td>
+                  <td className='authTableTd' id='authTableTdEmail'>{d.password}</td>
+                  <td className='authTableTd' id='authTableTdPhone'>{d.designation}</td>
                 </tr>
               ))}
             </tbody>

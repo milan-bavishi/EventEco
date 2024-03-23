@@ -1,4 +1,4 @@
-const otppppTemplate = (otp) => {
+const otppppTemplate = (otp,eventname) => {
 	return `<!DOCTYPE html>
 	<html>
 	
@@ -67,10 +67,10 @@ const otppppTemplate = (otp) => {
 	<body>
 		<div class="container">
 			<h1>Eventeco</h1>
-			<div class="message">Code for Your event</div>
+			<div class="message">Code for ${eventname} </div>
 			<div class="body">
 				<p>Dear User,</p>
-				<p>Thank you for registering with .This is your Code for your Event
+				<p>Thank you for registering with .This is your Code for  ${eventname}
 					</p>
 				<h2 class="highlight">${otp}</h2>
                 <h1 class"highlight"></h1>

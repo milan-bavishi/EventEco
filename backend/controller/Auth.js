@@ -211,7 +211,7 @@ const authlogin = async (req, res) => {
     if (!user) {
       return res.json({
         success: false,
-        message: "id is not registrered, please signup first",
+        message: "Invaild ID",
       });
     }
 
