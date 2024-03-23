@@ -103,7 +103,7 @@ const authallData = async (req, res) => {
   }
 
   const dbResponse = await addauthModel.find({
-    email: email
+    useremail: email
   })
   // console.log(dbResponse);
 
@@ -153,10 +153,10 @@ const addperson = async (req, res) => {
     email
   })
   console.log(addperson);
-  let res2 = await mailSender(req.body.personemail,"Verification Code for Eventeco", otppptemplate(genratedOtp));
+  let res2 = await mailSender(req.body.personemail,`Code for ${eventname}`, otppptemplate(genratedOtp,req.body.eventname,req.body.firstname,req.body.lastname));
   return res.json({
     success: true,
-    msg: "Event Registred"
+    msg: "Person Registred"
   })
 };
 
